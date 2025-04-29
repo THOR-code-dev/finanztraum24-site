@@ -1,14 +1,16 @@
 import React from 'react';
 import CreditApplicationForm from '../components/CreditApplicationForm';
 import './CreditApplicationPage.css';
+import { Link } from 'react-router-dom';
 
 const CreditApplicationPage = () => {
     return (
         <div className="credit-application-page">
             <header className="application-header">
-                <div className="logo-container">
-                    <span className="logo-text">FINANZTRAUM24.NET</span>
-                </div>
+                <Link to="/" className="logo-container">
+                    <div className="logo-pulse"></div>
+                    <span className="logo-text">FINANZTRAUM24</span>
+                </Link>
                 <div className="contact-info">
                     <div className="contact-text">Ücretsiz danışma</div>
                     <div className="contact-phone">0800 433 88 77</div>
@@ -21,11 +23,26 @@ const CreditApplicationPage = () => {
             </header>
 
             <main className="application-main">
+                <div className="floating-particles">
+                    <div className="particle"></div>
+                    <div className="particle"></div>
+                    <div className="particle"></div>
+                    <div className="particle"></div>
+                    <div className="particle"></div>
+                </div>
                 <CreditApplicationForm />
             </main>
 
             <footer className="application-footer">
-                <p>© 2024 FINANZTRAUM24.NET. Tüm hakları saklıdır.</p>
+                <div className="footer-content">
+                    <p>© 2024 FINANZTRAUM24. Tüm hakları saklıdır.</p>
+                    <div className="footer-links">
+                        <Link to="/">Ana Sayfa</Link>
+                        <a href="#">Gizlilik Politikası</a>
+                        <a href="#">Kullanım Şartları</a>
+                        <a href="#">İletişim</a>
+                    </div>
+                </div>
             </footer>
         </div>
     );

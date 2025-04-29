@@ -1,41 +1,56 @@
 /* Renk paleti değişkenleri */
 :root {
-    --primary-color: #1A365D;
-    /* Koyu lacivert - ana renk */
-    --secondary-color: #0096C7;
-    /* Turkuaz - ikincil renk */
-    --accent-color: #FFD700;
+    --primary-color: #000000;
+    /* Siyah - ana renk */
+    --secondary-color: #111111;
+    /* Koyu gri - ikincil renk */
+    --accent-color: #F2CD83;
     /* Altın - vurgu rengi */
+    --accent-hover: #e0b15e;
+    /* Altın hover rengi */
     --success-color: #4CAF50;
     /* Yeşil - başarı rengi */
-    --light-bg: #F5F7FA;
-    /* Açık gri - arka plan */
-    --dark-text: #4A5568;
-    /* Koyu gri - metin rengi */
-    --border-color: #E2E8F0;
-    /* Açık gri - kenarlık rengi */
-    --hover-color: #134E6F;
-    /* Koyu turkuaz - hover durumu */
+    --light-bg: #222;
+    /* Koyu gri - arka plan */
+    --dark-text: #FFF;
+    /* Beyaz - metin rengi */
+    --border-color: #333;
+    /* Gri - kenarlık rengi */
+    --hover-color: #F2CD83;
+    /* Altın - hover durumu */
     --error-color: #E53E3E;
     /* Kırmızı - hata durumu */
 }
 
 .credit-application-form {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 20px;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 40px;
+    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #111 0%, #0a0a0a 100%);
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7),
+        0 0 80px rgba(242, 205, 131, 0.1);
     position: relative;
     overflow: hidden;
-    color: var(--dark-text);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.credit-application-form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-color), var(--accent-hover));
+    z-index: 1;
 }
 
 /* Progress Bar */
 .progress-container {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     position: relative;
 }
 
@@ -44,30 +59,30 @@
     position: absolute;
     width: 100%;
     height: 1px;
-    background: var(--border-color);
-    bottom: -10px;
+    background: rgba(255, 255, 255, 0.1);
+    bottom: -15px;
     left: 0;
 }
 
 .progress-bar {
-    height: 10px;
-    background-color: var(--light-bg);
-    border-radius: 5px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 100px;
     overflow: hidden;
     position: relative;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .progress-fill {
     height: 100%;
-    background-color: var(--accent-color);
+    background: linear-gradient(90deg, #4CAF50, #2E7D32);
     background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-size: 20px 20px;
-    border-radius: 5px;
+    border-radius: 100px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding-left: 10px;
+    padding-left: 15px;
     transition: width 0.8s cubic-bezier(0.23, 1, 0.32, 1);
     animation: progress-bar-stripes 2s linear infinite;
 }
@@ -84,8 +99,8 @@
 
 .progress-percentage {
     position: absolute;
-    left: 10px;
-    color: white;
+    left: 15px;
+    color: #000;
     font-size: 12px;
     font-weight: bold;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
@@ -96,9 +111,9 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 10px;
+    padding: 15px 5px;
     animation: fadeIn 0.5s ease-in-out;
-    min-height: 400px;
+    min-height: 450px;
     position: relative;
     width: 100%;
 }
@@ -116,11 +131,11 @@
 }
 
 .slide-in-next {
-    animation: slideInNext 0.5s forwards;
+    animation: slideInNext 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
 .slide-in-prev {
-    animation: slideInPrev 0.5s forwards;
+    animation: slideInPrev 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
 @keyframes slideInNext {
@@ -148,62 +163,72 @@
 }
 
 .form-title {
-    font-size: 28px;
-    color: var(--primary-color);
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--accent-color);
     text-align: left;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     transition: transform 0.3s ease;
     position: relative;
     align-self: flex-start;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
 }
 
 .form-title:after {
     content: '';
     position: absolute;
-    width: 60px;
+    width: 70px;
     height: 3px;
-    background: var(--secondary-color);
-    bottom: -10px;
+    background: linear-gradient(90deg, var(--accent-color), var(--accent-hover));
+    bottom: -15px;
     left: 0;
     transform: none;
-    border-radius: 3px;
+    border-radius: 100px;
 }
 
 .certification-badge {
-    margin: 20px 0;
-    width: 100px;
-    height: 100px;
+    margin: 30px 0;
+    width: 110px;
+    height: 110px;
     align-self: center;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    filter: drop-shadow(0 5px 15px rgba(242, 205, 131, 0.2));
 }
 
 .certification-badge:hover {
-    transform: scale(1.05);
+    transform: scale(1.05) rotate(5deg);
 }
 
 .certification-badge img {
     width: 100%;
     height: auto;
+    border-radius: 50%;
 }
 
 .form-info {
     text-align: left;
-    color: #333;
-    margin-bottom: 30px;
+    color: #aaa;
+    margin-bottom: 40px;
     max-width: 600px;
+    line-height: 1.8;
 }
 
 .form-info p {
-    margin-bottom: 15px;
-    line-height: 1.5;
+    margin-bottom: 18px;
+    font-size: 16px;
 }
 
 /* Form Controls */
 .form-group {
     width: 100%;
     position: relative;
-    margin-bottom: 30px;
-    transition: margin-bottom 0.3s ease;
+    margin-bottom: 35px;
+    transition: margin-bottom 0.3s ease, transform 0.3s ease;
+}
+
+.form-group:hover {
+    transform: translateY(-2px);
 }
 
 .form-group.has-active-tooltip {
@@ -214,98 +239,42 @@
 .form-label {
     display: block;
     font-weight: 600;
-    font-size: 18px;
-    color: #333;
-    margin-bottom: 15px;
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 20px;
     text-align: left;
+    letter-spacing: 0.5px;
 }
 
 .radio-options {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
     width: 100%;
 }
 
-.radio-simple-container {
-    display: flex;
-    align-items: center;
-    padding: 8px 15px;
-    cursor: pointer;
-    background: transparent;
-    border: 1px solid #e8e8e8;
-    border-radius: 8px;
-    transition: all 0.2s ease;
-}
-
-.radio-simple-container:hover {
-    border-color: #003E82;
-}
-
-.radio-simple-container input:checked~.radio-text {
-    color: #003E82;
-    font-weight: 600;
-}
-
-.radio-simple-container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-}
-
-.radio-simple-container .radio-checkmark {
-    position: relative;
-    width: 22px;
-    height: 22px;
-    min-width: 22px;
-    border: 2px solid #003E82;
-    border-radius: 50%;
-    margin-right: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.radio-simple-container .radio-text {
-    flex-grow: 1;
-    margin-left: 15px;
-    text-align: center;
-}
-
-.radio-simple-container input:checked~.radio-checkmark:after {
-    content: '';
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: #003E82;
-    transform: scale(1);
-    opacity: 1;
-    transition: all 0.2s ease;
-}
-
-.radio-simple-container input:not(:checked)~.radio-checkmark:after {
-    transform: scale(0);
-    opacity: 0;
-}
-
+/* Anzahl Kreditnehmer bölümündeki radio buttonlar için özel stiller */
 .radio-container {
     display: flex;
     align-items: center;
     position: relative;
-    padding: 15px;
-    border: 1px solid #e0e0e0;
-    border-radius: 6px;
+    padding: 18px 20px;
+    border: 1px solid rgba(78, 42, 132, 0.6);
+    border-radius: 12px;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.25s ease;
     overflow: hidden;
+    background: rgba(25, 25, 35, 0.9);
+    margin-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
 }
 
 .radio-container:hover {
-    border-color: var(--secondary-color);
-    background-color: rgba(0, 150, 199, 0.05);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    border-color: #F2CD83;
+    background: rgba(53, 15, 88, 0.8);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), 0 0 10px rgba(242, 205, 131, 0.3);
 }
 
 .radio-container:before {
@@ -315,7 +284,7 @@
     left: 0;
     width: 4px;
     height: 0%;
-    background: var(--secondary-color);
+    background: linear-gradient(to bottom, #F2CD83, #e0b15e);
     transition: height 0.3s ease;
 }
 
@@ -325,13 +294,14 @@
 }
 
 .radio-container input:checked~.radio-text {
-    color: var(--primary-color);
+    color: #F2CD83;
     font-weight: 600;
+    text-shadow: 0 0 10px rgba(242, 205, 131, 0.3);
 }
 
 .radio-container input:checked {
-    border-color: var(--primary-color);
-    background-color: rgba(0, 150, 199, 0.05);
+    border-color: #F2CD83;
+    background: linear-gradient(135deg, rgba(53, 15, 88, 0.9), rgba(78, 42, 132, 0.8));
 }
 
 .radio-container input:checked~.radio-container:before {
@@ -342,18 +312,27 @@
     position: absolute;
     opacity: 0;
     cursor: pointer;
+    height: 0;
+    width: 0;
 }
 
 .radio-checkmark {
     position: relative;
-    width: 22px;
-    height: 22px;
-    border: 2px solid var(--primary-color);
+    width: 24px;
+    height: 24px;
+    border: 2px solid #8A4FFF;
     border-radius: 50%;
     margin-right: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 0 8px rgba(138, 79, 255, 0.5);
+}
+
+.radio-container input:checked~.radio-checkmark {
+    border-color: #F2CD83;
+    box-shadow: 0 0 12px rgba(242, 205, 131, 0.6);
 }
 
 .radio-container input:checked~.radio-checkmark:after {
@@ -362,7 +341,7 @@
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background-color: var(--primary-color);
+    background-color: #F2CD83;
     transform: scale(1);
     opacity: 1;
     transition: all 0.2s ease;
@@ -374,108 +353,61 @@
 }
 
 .radio-text {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 500;
-    transition: color 0.2s ease;
+    transition: color 0.3s ease;
+    color: #FFFFFF;
+    letter-spacing: 0.5px;
 }
 
-/* Action Buttons */
+/* Form Actions */
 .form-actions {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    max-width: 600px;
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid #eee;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .btn {
-    padding: 14px 20px;
-    border: none;
-    border-radius: 6px;
+    padding: 14px 28px;
+    border-radius: 50px;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
-    justify-content: center;
-    min-width: 120px;
+    gap: 10px;
+    border: none;
     position: relative;
     overflow: hidden;
-}
-
-.btn:after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 5px;
-    height: 5px;
-    background: rgba(255, 255, 255, 0.5);
-    opacity: 0;
-    border-radius: 100%;
-    transform: scale(1, 1) translate(-50%);
-    transform-origin: 50% 50%;
-}
-
-.btn:hover:after {
-    animation: ripple 1s ease-out;
-}
-
-@keyframes ripple {
-    0% {
-        transform: scale(0, 0);
-        opacity: 0.5;
-    }
-
-    100% {
-        transform: scale(30, 30);
-        opacity: 0;
-    }
+    letter-spacing: 0.5px;
 }
 
 .btn-back {
     background-color: transparent;
-    color: var(--primary-color);
-    border: 1px solid var(--primary-color);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .btn-back:hover:not(:disabled) {
-    background-color: rgba(26, 54, 93, 0.05);
-    transform: translateX(-3px);
-}
-
-.btn-back:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    transform: translateX(-5px);
 }
 
 .btn-next {
-    background-color: var(--secondary-color);
-    color: white;
-    box-shadow: 0 4px 6px rgba(0, 150, 199, 0.2);
+    background: linear-gradient(90deg, var(--accent-color), var(--accent-hover));
+    color: #000;
+    box-shadow: 0 4px 15px rgba(242, 205, 131, 0.3);
 }
 
 .btn-next:hover {
-    background-color: var(--hover-color);
-    transform: translateX(3px);
-}
-
-.arrow-left,
-.arrow-right {
-    font-size: 18px;
-    margin: 0 5px;
-    transition: transform 0.3s ease;
-}
-
-.btn-back:hover .arrow-left {
-    transform: translateX(-3px);
-}
-
-.btn-next:hover .arrow-right {
-    transform: translateX(3px);
+    background: linear-gradient(90deg, var(--accent-hover), var(--accent-color));
+    transform: translateX(5px);
+    box-shadow: 0 6px 20px rgba(242, 205, 131, 0.4);
 }
 
 /* Security Information */
