@@ -1,16 +1,16 @@
 import React from 'react';
 import './OnBasvuruPage.css';
 import CreditCalculatorForm from '../components/CreditCalculatorForm';
-import logoImg from '../assets/logo.svg';
-import bankImg1 from '../assets/bank1.png';
-import bankImg2 from '../assets/bank2.png';
-import bankImg3 from '../assets/bank3.png';
-import bankImg4 from '../assets/bank4.png';
-import bankImg5 from '../assets/bank5.png';
-import trustLogo1 from '../assets/trust1.png';
-import trustLogo2 from '../assets/trust2.png';
-import trustLogo3 from '../assets/trust3.png';
-import phoneMockup from '../assets/phone-mockup.png';
+// import logoImg from '../assets/logo.svg';
+// import bankImg1 from '../assets/bank1.png';
+// import bankImg2 from '../assets/bank2.png';
+// import bankImg3 from '../assets/bank3.png';
+// import bankImg4 from '../assets/bank4.png';
+// import bankImg5 from '../assets/bank5.png';
+// import trustLogo1 from '../assets/trust1.png';
+// import trustLogo2 from '../assets/trust2.png';
+// import trustLogo3 from '../assets/trust3.png';
+// import phoneMockup from '../assets/phone-mockup.png';
 import { Link } from 'react-router-dom';
 import { FaHome, FaIdCard, FaChartLine, FaCheckCircle, FaHandshake, FaPhone, FaUser } from 'react-icons/fa';
 
@@ -21,7 +21,7 @@ const OnBasvuruPage = () => {
             <header className="site-header">
                 <div className="container">
                     <div className="header-left">
-                        <img src={logoImg} alt="Logo" className="header-logo" />
+                        {/* <img src={logoImg} alt="Logo" className="header-logo" /> */}
                         <div className="brand-text">
                             <div className="brand-name">FINANZTRAUM24</div>
                             <div className="brand-slogan">DIE EXPERTEN FÜR IMMOBILIEN UND PRIVATKREDITE</div>
@@ -70,13 +70,13 @@ const OnBasvuruPage = () => {
                         <div className="trust-seals">
                             <div className="trust-logos">
                                 <div className="logo-item">
-                                    <img src={trustLogo1} alt="Trust Seal" />
+                                    {/* <img src={trustLogo1} alt="Trust Seal" /> */}
                                 </div>
                                 <div className="logo-item">
-                                    <img src={trustLogo2} alt="Trust Seal" />
+                                    {/* <img src={trustLogo2} alt="Trust Seal" /> */}
                                 </div>
                                 <div className="logo-item">
-                                    <img src={trustLogo3} alt="Trust Seal" />
+                                    {/* <img src={trustLogo3} alt="Trust Seal" /> */}
                                 </div>
                             </div>
                         </div>
@@ -84,7 +84,7 @@ const OnBasvuruPage = () => {
 
                     <div className="onbasvuru-info-column">
                         <div className="phone-mockup">
-                            <img src={phoneMockup} alt="Phone Mockup" className="phone-image" />
+                            {/* <img src={phoneMockup} alt="Phone Mockup" className="phone-image" /> */}
                         </div>
 
                         <div className="info-checklist">
@@ -100,11 +100,11 @@ const OnBasvuruPage = () => {
                 <div className="partner-banks">
                     <h3>Partnerlerimiz</h3>
                     <div className="bank-logos">
-                        <div className="logo-wrapper"><img src={bankImg1} alt="Bank Logo" /></div>
-                        <div className="logo-wrapper"><img src={bankImg2} alt="Bank Logo" /></div>
-                        <div className="logo-wrapper"><img src={bankImg3} alt="Bank Logo" /></div>
-                        <div className="logo-wrapper"><img src={bankImg4} alt="Bank Logo" /></div>
-                        <div className="logo-wrapper"><img src={bankImg5} alt="Bank Logo" /></div>
+                        <div className="logo-wrapper">{/* <img src={bankImg1} alt="Bank Logo" /> */}</div>
+                        <div className="logo-wrapper">{/* <img src={bankImg2} alt="Bank Logo" /> */}</div>
+                        <div className="logo-wrapper">{/* <img src={bankImg3} alt="Bank Logo" /> */}</div>
+                        <div className="logo-wrapper">{/* <img src={bankImg4} alt="Bank Logo" /> */}</div>
+                        <div className="logo-wrapper">{/* <img src={bankImg5} alt="Bank Logo" /> */}</div>
                     </div>
 
                     <a href="#" className="teilnehmende-banken">Tüm katılımcı bankaları görüntüle</a>
