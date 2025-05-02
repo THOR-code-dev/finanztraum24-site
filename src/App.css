@@ -386,10 +386,31 @@ body {
   .header-content {
     flex-direction: column;
     padding: 15px 10px;
+    gap: 10px;
+  }
+
+  .logo-container {
+    margin: 0 auto;
   }
 
   .contact-info {
-    margin-top: 15px;
+    margin-top: 10px;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .navigation-menu {
+    border-top: none;
+  }
+
+  .main-nav {
+    padding: 0 10px;
+  }
+
+  .nav-list {
+    padding: 10px 0;
+    justify-content: center;
+    gap: 5px;
   }
 
   .nav-link {
@@ -437,28 +458,73 @@ body {
     font-size: 16px;
   }
 
+  .contact-text {
+    font-size: 12px;
+  }
+
+  .navigation-menu {
+    overflow-x: auto;
+    padding: 5px 0;
+  }
+
   .nav-list {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 5px 0;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    width: 100%;
+  }
+
+  .nav-list::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera */
   }
 
   .nav-item {
-    width: 100%;
-    border-bottom: 1px solid var(--medium-gray);
+    width: auto;
+    flex-shrink: 0;
+    border-bottom: none;
+  }
+
+  .nav-link {
+    padding: 8px 10px;
+    font-size: 13px;
+    white-space: nowrap;
   }
 
   .hero-title {
-    font-size: 28px;
+    font-size: 24px;
   }
 
   .hero-subtitle {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .hero-section {
-    padding: 30px 0;
+    padding: 25px 0;
   }
 
   .cert-item {
     transform: scale(0.9);
+  }
+
+  .partners-logos {
+    gap: 20px;
+  }
+
+  .partner-logo {
+    min-width: 100px;
+    font-size: 16px;
+    padding: 10px 15px;
+  }
+
+  .feature-item {
+    width: 100%;
   }
 }

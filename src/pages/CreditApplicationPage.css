@@ -18,9 +18,10 @@
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    position: sticky;
-    top: 0;
+    position: relative;
     z-index: 100;
+    height: auto;
+    min-height: 80px;
 }
 
 .logo-container {
@@ -214,21 +215,28 @@
 @media (max-width: 768px) {
     .application-header {
         flex-direction: column;
-        gap: 20px;
-        padding: 20px 15px;
+        gap: 15px;
+        padding: 15px;
+        height: auto;
+    }
+
+    .logo-container {
+        margin-bottom: 5px;
     }
 
     .contact-info {
         width: 100%;
         justify-content: center;
+        padding: 8px 15px;
     }
 
     .application-main {
-        padding: 30px 15px;
+        padding: 20px 10px;
     }
 
     .footer-links {
-        gap: 20px;
+        gap: 15px;
+        flex-direction: column;
     }
 }
 
@@ -242,7 +250,17 @@
     }
 
     .contact-info {
-        padding: 8px 15px;
+        padding: 8px 12px;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .footer-content {
+        padding: 0 10px;
+    }
+
+    .application-footer {
+        padding: 20px 0;
     }
 }
 

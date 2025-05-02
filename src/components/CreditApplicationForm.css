@@ -24,6 +24,7 @@
 
 .credit-application-form {
     max-width: 900px;
+    width: 100%;
     margin: 0 auto;
     padding: 40px;
     font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
@@ -207,16 +208,23 @@
 }
 
 .form-info {
+    margin-top: 24px;
+    padding: 8px;
+    background-color: transparent;
+    border-left: none;
+    border-radius: 4px;
     text-align: left;
-    color: #aaa;
-    margin-bottom: 40px;
-    max-width: 600px;
-    line-height: 1.8;
 }
 
-.form-info p {
-    margin-bottom: 18px;
-    font-size: 16px;
+.credit-application-form .form-info p {
+    margin: 0 0 20px 0;
+    line-height: 1.5;
+    color: #f8f8f8 !important;
+    text-align: left;
+}
+
+.credit-application-form .form-info p:last-child {
+    margin-bottom: 0;
 }
 
 /* Form Controls */
@@ -238,9 +246,9 @@
 
 .form-label {
     display: block;
-    font-weight: 600;
+    font-weight: 800;
     font-size: 20px;
-    color: #fff;
+    color: #f8f8f8;
     margin-bottom: 20px;
     text-align: left;
     letter-spacing: 0.5px;
@@ -356,7 +364,7 @@
     font-size: 18px;
     font-weight: 500;
     transition: color 0.3s ease;
-    color: #FFFFFF;
+    color: #f8f8f8;
     letter-spacing: 0.5px;
 }
 
@@ -455,11 +463,23 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .credit-application-form {
+        padding: 20px 15px;
+        margin: 0 10px;
+        border-radius: 8px;
+    }
+
     .form-title {
         font-size: 24px;
+        margin-bottom: 20px;
     }
 
     .form-label {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+
+    .radio-text {
         font-size: 16px;
     }
 
@@ -467,16 +487,227 @@
         padding: 12px 15px;
         font-size: 14px;
     }
+
+    .form-content {
+        min-height: 350px;
+        padding: 10px 0;
+    }
+
+    .collapsible-info {
+        max-width: 100%;
+    }
+
+    .form-group {
+        margin-bottom: 25px;
+    }
+
+    .radio-container {
+        padding: 15px;
+    }
+
+    .certification-badge {
+        width: 80px;
+        height: 80px;
+    }
+
+    /* Info icon position for mobile */
+    .info-icon {
+        right: -40px;
+        width: 26px;
+        height: 26px;
+        font-size: 16px;
+    }
+
+    .info-tooltip {
+        padding: 12px;
+        font-size: 13px;
+    }
+
+    /* Form elements adjustment */
+    .radio-options {
+        gap: 12px;
+    }
+
+    .form-group.has-active-tooltip {
+        margin-bottom: 130px;
+    }
+
+    .income-input {
+        padding: 12px;
+    }
+
+    .income-info-icon {
+        width: 22px;
+        height: 22px;
+    }
+
+    /* Counter adjustments */
+    .counter-control {
+        margin-bottom: 10px;
+    }
+
+    .counter-value {
+        padding: 0 15px;
+        font-size: 16px;
+    }
+
+    .nebentaetigkeit-details {
+        padding: 15px;
+    }
 }
 
 @media (max-width: 480px) {
+    .credit-application-form {
+        padding: 15px 10px;
+        margin: 0 5px;
+    }
+
     .form-actions {
         flex-direction: column;
         gap: 15px;
+        padding-top: 20px;
     }
 
     .btn {
         width: 100%;
+        justify-content: center;
+    }
+
+    .form-title {
+        font-size: 20px;
+    }
+
+    .form-label {
+        font-size: 14px;
+    }
+
+    .radio-text {
+        font-size: 14px;
+    }
+
+    .form-content {
+        min-height: 300px;
+    }
+
+    .radio-container {
+        padding: 12px 10px;
+    }
+
+    .radio-checkmark {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+    }
+
+    .progress-container {
+        margin-bottom: 25px;
+    }
+
+    .radio-container input:checked~.radio-checkmark:after {
+        width: 10px;
+        height: 10px;
+    }
+
+    .certification-badge {
+        width: 70px;
+        height: 70px;
+        margin: 20px 0;
+    }
+
+    .collapsible-btn {
+        padding: 12px 10px;
+        font-size: 14px;
+    }
+
+    .collapsible-content {
+        padding: 5px 10px 10px;
+        font-size: 12px;
+    }
+
+    .input-wrapper input,
+    .form-select,
+    .form-input {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .counter-btn {
+        width: 30px;
+        height: 30px;
+    }
+
+    .nebentaetigkeiten-counter .counter-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .security-info {
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+    }
+
+    /* Info icon position for small mobile */
+    .info-icon {
+        position: relative;
+        right: auto;
+        top: auto;
+        margin-left: 10px;
+        display: inline-flex;
+        width: 22px;
+        height: 22px;
+        font-size: 14px;
+        vertical-align: middle;
+    }
+
+    .info-tooltip {
+        left: auto;
+        right: auto;
+        width: calc(100% - 20px);
+        max-width: 300px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    .form-group.has-active-tooltip {
+        margin-bottom: 35px;
+    }
+
+    /* Radio container adjustments */
+    .radio-container {
+        margin-bottom: 10px;
+    }
+
+    /* Input field adjustments */
+    .input-wrapper {
+        margin-bottom: 8px;
+    }
+
+    .form-info-text {
+        font-size: 12px;
+        margin-top: 5px;
+    }
+
+    .nebentaetigkeit-title {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    /* Counter adjustments for small mobile */
+    .nebentaetigkeiten-counter .counter-value {
+        font-size: 20px;
+        padding: 0 20px;
+    }
+
+    .nebentaetigkeiten-counter .counter-btn {
+        font-size: 20px;
     }
 }
 
@@ -549,9 +780,9 @@
 
 .form-info {
     margin-top: 24px;
-    padding: 12px;
-    background-color: rgba(0, 150, 199, 0.1);
-    border-left: 4px solid var(--secondary-color);
+    padding: 8px;
+    background-color: transparent;
+    border-left: none;
     border-radius: 4px;
 }
 
@@ -877,9 +1108,10 @@
 }
 
 .form-info p {
-    margin: 0;
+    margin: 0 0 20px 0;
     line-height: 1.5;
-    color: #555;
+    color: #f8f8f8 !important;
+    text-align: left;
 }
 
 .input-wrapper {

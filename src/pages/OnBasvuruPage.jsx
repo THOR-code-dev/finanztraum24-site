@@ -18,7 +18,7 @@ const OnBasvuruPage = () => {
     return (
         <div className="onbasvuru-page">
             {/* Header - HomePage ile aynı header */}
-            <header className="site-header">
+            <header className="site-header" id="basvuru-header">
                 <div className="container">
                     <div className="header-left">
                         {/* <img src={logoImg} alt="Logo" className="header-logo" /> */}

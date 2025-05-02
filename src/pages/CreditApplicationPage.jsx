@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const CreditApplicationPage = () => {
     return (
         <div className="credit-application-page">
-            <header className="application-header">
+            <header className="application-header" id="credit-header">
                 <Link to="/" className="logo-container">
                     <div className="logo-pulse"></div>
                     <span className="logo-text">FINANZTRAUM24</span>

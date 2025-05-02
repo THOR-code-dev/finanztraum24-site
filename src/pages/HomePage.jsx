@@ -7,7 +7,7 @@ const HomePage = () => {
     return (
         <div className="homepage">
             {/* Header / Navigation */}
-            <header className="site-header">
+            <header className="site-header" id="main-header">
                 <div className="container">
                     <div className="header-left">
                         <img src="/svg-logo-pattern.png" alt="Logo" className="header-logo" />
