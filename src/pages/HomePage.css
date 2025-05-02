@@ -163,6 +163,7 @@
     min-height: 80vh;
     display: block;
     object-fit: cover;
+    object-position: center;
 }
 
 .hero-overlay {
@@ -863,7 +864,9 @@
 @media (max-width: 992px) {
 
     .benefits .container,
-    .about .container {
+    .about .container,
+    .services .container,
+    .contact-cta .container {
         flex-direction: column;
     }
 
@@ -871,29 +874,135 @@
     .benefits-right,
     .about-left,
     .about-right {
-        flex: 0 0 100%;
-        margin-bottom: 30px;
+        width: 100%;
+        margin: 0 0 30px 0;
     }
 
     .stats-items {
-        flex-direction: column;
-        gap: 20px;
+        flex-wrap: wrap;
     }
 
     .stat-item {
-        flex: 0 0 100%;
+        width: 100%;
     }
 
     .contact-info-box {
         flex-direction: column;
-        text-align: center;
-        gap: 20px;
+        align-items: center;
+    }
+
+    .hero-image-container {
+        margin-top: 20px;
+        clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+    }
+
+    .full-width-image {
+        min-height: 50vh;
+    }
+
+    .site-header {
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .header-logo {
+        width: 70px;
+        height: 70px;
+    }
+
+    .brand-name {
+        font-size: 22px;
     }
 }
 
 @media (max-width: 768px) {
     .main-nav {
         display: none;
+    }
+
+    /* Mobil için hamburger menü ekliyoruz */
+    .mobile-menu-toggle {
+        display: block;
+        width: 30px;
+        height: 30px;
+        position: relative;
+        cursor: pointer;
+        z-index: 1010;
+    }
+
+    .mobile-menu-toggle span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: #F2CD83;
+        position: absolute;
+        transition: all 0.3s;
+    }
+
+    .mobile-menu-toggle span:nth-child(1) {
+        top: 0;
+    }
+
+    .mobile-menu-toggle span:nth-child(2) {
+        top: 10px;
+    }
+
+    .mobile-menu-toggle span:nth-child(3) {
+        top: 20px;
+    }
+
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 80%;
+        height: 100vh;
+        background-color: #111;
+        z-index: 1000;
+        transition: left 0.3s;
+        padding: 80px 20px 20px;
+        overflow-y: auto;
+    }
+
+    .mobile-menu.active {
+        left: 0;
+    }
+
+    .mobile-menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .mobile-menu ul li {
+        margin-bottom: 15px;
+    }
+
+    .mobile-menu ul li a {
+        color: #F2CD83;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: 500;
+        display: block;
+        padding: 10px 0;
+    }
+
+    .mobile-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s;
+    }
+
+    .mobile-overlay.active {
+        opacity: 1;
+        visibility: visible;
     }
 
     .hero {
@@ -914,7 +1023,74 @@
 
     .footer-bottom {
         flex-direction: column;
-        text-align: center;
-        gap: 10px;
+        align-items: center;
+    }
+
+    .hero-image-container {
+        clip-path: polygon(0 3%, 100% 0, 100% 97%, 0 100%);
+    }
+
+    .full-width-image {
+        min-height: 40vh;
+    }
+
+    .header-left {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-header .container {
+        padding: 0 10px;
+    }
+
+    .header-logo {
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+    }
+
+    .brand-name {
+        font-size: 18px;
+        letter-spacing: 2px;
+    }
+
+    .brand-slogan {
+        font-size: 10px;
+    }
+
+    .hero-image-container {
+        margin-top: 10px;
+        clip-path: none;
+    }
+
+    .full-width-image {
+        min-height: 30vh;
+    }
+
+    .service-card {
+        padding: 15px;
+    }
+
+    .service-icon {
+        font-size: 30px;
+    }
+
+    .btn {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    .hero-content-overlay h2 {
+        font-size: 24px;
+    }
+
+    .hero-content-overlay h3 {
+        font-size: 18px;
+    }
+
+    .hero-content-overlay p {
+        font-size: 14px;
     }
 }

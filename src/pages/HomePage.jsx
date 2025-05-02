@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './HomePage.css';
 import { Link } from 'react-router-dom';
-import { FaHome, FaIdCard, FaChartLine, FaCheckCircle, FaHandshake, FaPhone, FaUser } from 'react-icons/fa';
+import { FaHome, FaIdCard, FaChartLine, FaCheckCircle, FaHandshake, FaPhone, FaUser, FaBars } from 'react-icons/fa';
 
 const HomePage = () => {
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+    const toggleMobileMenu = () => {
+        setMobileMenuOpen(!mobileMenuOpen);
+    };
+
     return (
         <div className="homepage">
             {/* Header / Navigation */}
@@ -40,8 +46,34 @@ const HomePage = () => {
                             </li>
                         </ul>
                     </nav>
+
+                    {/* Mobil Menü Toggle Butonu */}
+                    <div className="mobile-menu-toggle" onClick={toggleMobileMenu}>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </div>
             </header>
+
+            {/* Mobil Menü */}
+            <div className={`mobile-menu ${mobileMenuOpen ? 'active' : ''}`}>
+                <ul>
+                    <li><a href="#" className="active">Home</a></li>
+                    <li><a href="#">Über Mich</a></li>
+                    <li><a href="#">Immobilien</a></li>
+                    <li><a href="#">Finanzierung</a></li>
+                    <li><a href="#">Fördermittel Beratung</a></li>
+                    <li><a href="#">kfW Beratung</a></li>
+                    <li><Link to="/on-basvuru">Referenzen</Link></li>
+                    <li><a href="#">Kontakt</a></li>
+                    <li><a href="#">Impressum</a></li>
+                    <li><a href="#">Datenschutz</a></li>
+                </ul>
+            </div>
+
+            {/* Mobil Overlay */}
+            <div className={`mobile-overlay ${mobileMenuOpen ? 'active' : ''}`} onClick={toggleMobileMenu}></div>
 
             {/* Hero Image */}
             <section className="hero-image-container">

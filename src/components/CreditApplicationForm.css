@@ -554,12 +554,40 @@
     .nebentaetigkeit-details {
         padding: 15px;
     }
+
+    /* Form içi görseller için iyileştirmeler */
+    .loading-logo {
+        max-width: 80px;
+        height: auto;
+    }
+
+    .form-content img {
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .white-box img {
+        max-width: 30px;
+        height: auto;
+    }
+
+    .form-actions {
+        padding: 10px;
+    }
+
+    .btn {
+        padding: 10px 18px;
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 480px) {
     .credit-application-form {
         padding: 15px 10px;
         margin: 0 5px;
+        border-radius: 6px;
     }
 
     .form-actions {
@@ -574,7 +602,8 @@
     }
 
     .form-title {
-        font-size: 20px;
+        font-size: 22px;
+        margin-bottom: 15px;
     }
 
     .form-label {
@@ -586,7 +615,7 @@
     }
 
     .form-content {
-        min-height: 300px;
+        padding: 15px 10px;
     }
 
     .radio-container {
@@ -708,6 +737,14 @@
 
     .nebentaetigkeiten-counter .counter-btn {
         font-size: 20px;
+    }
+
+    .loading-logo {
+        max-width: 60px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
     }
 }
 
@@ -1489,4 +1526,10 @@
 .income-info-icon-top {
     position: relative;
     top: 6px;
+}
+
+/* İmaj ve İkon Düzenlemeleri */
+.credit-application-form img {
+    max-width: 100%;
+    height: auto;
 }
