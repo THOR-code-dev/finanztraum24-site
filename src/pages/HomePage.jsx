@@ -77,7 +77,7 @@ const HomePage = () => {
 
             {/* Hero Image */}
             <section className="hero-image-container">
-                <img src="/calisaninsan1.png" alt="Çalışan İnsan" className="full-width-image" />
+                <img src="/calisaninsan1.png" alt="Arbeitender Mensch" className="full-width-image" />
                 <div className="hero-overlay"></div>
                 <div className="hero-top-overlay"></div>
             </section>

@@ -2042,7 +2042,7 @@ const CreditApplicationForm = () => {
                     onClick={goToPreviousStep}
                     disabled={isAnimating}
                 >
-                    <span className="arrow-left">←</span> Geri
+                    <span className="arrow-left">←</span> Zurück
                 </button>
 
                 <button
@@ -2050,7 +2050,7 @@ const CreditApplicationForm = () => {
                     onClick={goToNextStep}
                     disabled={isAnimating}
                 >
-                    İlerle <span className="arrow-right">→</span>
+                    Weiter <span className="arrow-right">→</span>
                 </button>
             </div>
         </div>
@@ -2673,7 +2673,7 @@ const CreditApplicationForm = () => {
                     disabled={isAnimating}
                     style={{ backgroundColor: 'transparent', border: '1px solid #fff', color: '#fff', padding: '12px 20px', borderRadius: '4px', cursor: 'pointer', flex: '1', maxWidth: '45%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                 >
-                    <span className="arrow-left" style={{ marginRight: '8px' }}>←</span> Geri
+                    <span className="arrow-left" style={{ marginRight: '8px' }}>←</span> Zurück
                 </button>
 
                 <button
@@ -2682,7 +2682,7 @@ const CreditApplicationForm = () => {
                     disabled={isAnimating}
                     style={{ backgroundColor: '#ff9500', border: 'none', color: '#000', padding: '12px 20px', borderRadius: '4px', cursor: 'pointer', fontWeight: 'bold', flex: '1', maxWidth: '45%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                 >
-                    İleri <span className="arrow-right" style={{ marginLeft: '8px' }}>→</span>
+                    Weiter <span className="arrow-right" style={{ marginLeft: '8px' }}>→</span>
                 </button>
             </div>
         </div>
@@ -3069,7 +3069,7 @@ const CreditApplicationForm = () => {
                     onClick={goToPreviousStep}
                     disabled={isAnimating}
                 >
-                    <span className="arrow-left">←</span> Geri
+                    <span className="arrow-left">←</span> Zurück
                 </button>
 
                 <button
@@ -3077,7 +3077,7 @@ const CreditApplicationForm = () => {
                     onClick={goToNextStep}
                     disabled={isAnimating}
                 >
-                    İlerle <span className="arrow-right">→</span>
+                    Weiter <span className="arrow-right">→</span>
                 </button>
             </div>
 

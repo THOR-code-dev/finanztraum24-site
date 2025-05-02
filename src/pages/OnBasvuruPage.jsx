@@ -57,8 +57,8 @@ const OnBasvuruPage = () => {
 
             <div className="onbasvuru-container">
                 <div className="onbasvuru-header">
-                    <h1>Ön Başvuru</h1>
-                    <p>Herhangi bir kredi kartı, maaş bordrosu veya banka bilgisi olmadan hızlı bir şekilde başvurun.</p>
+                    <h1>Voranmeldung</h1>
+                    <p>Bewerben Sie sich schnell ohne Kreditkarte, Gehaltsabrechnung oder Bankinformationen.</p>
                 </div>
 
                 <div className="onbasvuru-content">
@@ -89,16 +89,16 @@ const OnBasvuruPage = () => {
 
                         <div className="info-checklist">
                             <ul>
-                                <li>✓ 3 dakikada ücretsiz kredi başvurusu</li>
-                                <li>✓ SCHUFA puanınıza hiçbir etki olmadan</li>
-                                <li>✓ Anında bir kredi teklifi alın</li>
+                                <li>✓ Kostenlose Kreditbeantragung in 3 Minuten</li>
+                                <li>✓ Ohne Auswirkung auf Ihren SCHUFA-Score</li>
+                                <li>✓ Erhalten Sie sofort ein Kreditangebot</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
                 <div className="partner-banks">
-                    <h3>Partnerlerimiz</h3>
+                    <h3>Unsere Partner</h3>
                     <div className="bank-logos">
                         <div className="logo-wrapper">{/* <img src={bankImg1} alt="Bank Logo" /> */}</div>
                         <div className="logo-wrapper">{/* <img src={bankImg2} alt="Bank Logo" /> */}</div>
@@ -107,13 +107,13 @@ const OnBasvuruPage = () => {
                         <div className="logo-wrapper">{/* <img src={bankImg5} alt="Bank Logo" /> */}</div>
                     </div>
 
-                    <a href="#" className="teilnehmende-banken">Tüm katılımcı bankaları görüntüle</a>
+                    <a href="#" className="teilnehmende-banken">Alle teilnehmenden Banken anzeigen</a>
                 </div>
 
                 <div className="konditionen-section">
-                    <h3>Kredi Şartları</h3>
-                    <p>Yıllık faiz oranları: % 0,68 - % 16,99; Efektif yıllık faiz: % 0,68 - % 17,99; Süre: 12 - 120 ay; Amaç: Serbest kullanım; Minimum Kredi Tutarı: 1.000 €; Maksimum Kredi Tutarı: 250.000 €</p>
-                    <p>Dolandırıcılığa dikkat! FINANZCHECK.de kredi ön ödemesi talep etmez ve nakit para ödemesi yapmaz.</p>
+                    <h3>Kreditbedingungen</h3>
+                    <p>Jährliche Zinssätze: 0,68% - 16,99%; Effektiver Jahreszins: 0,68% - 17,99%; Laufzeit: 12 - 120 Monate; Zweck: Freie Verwendung; Mindestkredit: 1.000 €; Maximaler Kreditbetrag: 250.000 €</p>
+                    <p>Vorsicht vor Betrug! FINANZCHECK.de verlangt keine Vorauszahlung für Kredite und leistet keine Barzahlungen.</p>
                 </div>
             </div>
         </div>
