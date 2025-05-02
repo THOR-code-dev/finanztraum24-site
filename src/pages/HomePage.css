@@ -916,6 +916,12 @@
 }
 
 @media (max-width: 768px) {
+
+    .mobile-menu,
+    .mobile-overlay {
+        display: block;
+    }
+
     .main-nav {
         display: none;
     }
