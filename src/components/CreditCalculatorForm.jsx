@@ -9,6 +9,7 @@ const CreditCalculatorForm = () => {
         term: 24,
         purpose: 'vehicle',
     });
+    const [calculatedResults, setCalculatedResults] = useState(null);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -50,8 +51,29 @@ const CreditCalculatorForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        e.stopPropagation(); // Event yayılımını durdur
         // Başvuru sayfasına yönlendir
         navigate('/application');
+    };
+
+    // Kredi hesaplama fonksiyonu
+    const calculateCredit = (e) => {
+        e.preventDefault();
+        e.stopPropagation(); // Event yayılımını durdur
+
+        // Basit faiz hesaplaması (örnek olarak)
+        const interestRate = 0.0495; // %4.95 örnek faiz oranı
+        const monthlyInterestRate = interestRate / 12;
+        const monthlyPayment = (formData.amount * monthlyInterestRate) / (1 - Math.pow(1 + monthlyInterestRate, -formData.term));
+        const totalPayment = monthlyPayment * formData.term;
+        const totalInterest = totalPayment - formData.amount;
+
+        setCalculatedResults({
+            monthlyPayment: monthlyPayment.toFixed(2),
+            totalPayment: totalPayment.toFixed(2),
+            totalInterest: totalInterest.toFixed(2),
+            interestRate: (interestRate * 100).toFixed(2)
+        });
     };
 
     const formatCurrency = (value) => {
@@ -69,7 +91,7 @@ const CreditCalculatorForm = () => {
         <div className="credit-calculator-form">
             <div className="form-container">
                 <div className="form-step">
-                    <form onSubmit={handleSubmit}>
+                    <div className="form-fields">
                         <div className="form-group">
                             <label>Kreditbetrag: {formatCurrency(formData.amount)}</label>
                             <div className="slider-container">
@@ -137,12 +159,52 @@ const CreditCalculatorForm = () => {
                             </div>
                         </div>
 
-                        <div className="form-actions">
-                            <button type="submit" className="btn btn-primary">
-                                Kreditvergleich starten
+                        {calculatedResults && (
+                            <div className="results-summary">
+                                <div className="result-item">
+                                    <span className="result-label">Monatliche Rate:</span>
+                                    <span className="result-value">{formatCurrency(calculatedResults.monthlyPayment)}</span>
+                                </div>
+                                <div className="result-item">
+                                    <span className="result-label">Gesamtrückzahlung:</span>
+                                    <span className="result-value">{formatCurrency(calculatedResults.totalPayment)}</span>
+                                </div>
+                                <div className="result-item">
+                                    <span className="result-label">Gesamtzinsen:</span>
+                                    <span className="result-value">{formatCurrency(calculatedResults.totalInterest)}</span>
+                                </div>
+                                <div className="result-item">
+                                    <span className="result-label">Zinssatz:</span>
+                                    <span className="result-value">{calculatedResults.interestRate}%</span>
+                                </div>
+                            </div>
+                        )}
+                    </div>
+
+                    <div className="buttons-wrapper">
+                        <div className="calculate-button-container">
+                            <button
+                                type="button"
+                                onClick={calculateCredit}
+                                className="btn btn-secondary"
+                                aria-label="Berechnen"
+                            >
+                                Berechnen
                             </button>
                         </div>
-                    </form>
+
+                        <form onSubmit={handleSubmit} className="start-form">
+                            <div className="start-button-container">
+                                <button
+                                    type="submit"
+                                    className="btn btn-primary"
+                                    aria-label="Kreditvergleich starten"
+                                >
+                                    Kreditvergleich starten
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

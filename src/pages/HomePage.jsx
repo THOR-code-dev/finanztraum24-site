@@ -2,12 +2,18 @@ import React, { useState } from 'react';
 import './HomePage.css';
 import { Link } from 'react-router-dom';
 import { FaHome, FaIdCard, FaChartLine, FaCheckCircle, FaHandshake, FaPhone, FaUser, FaBars } from 'react-icons/fa';
+import CreditCalculatorForm from '../components/CreditCalculatorForm';
 
 const HomePage = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [showCalculator, setShowCalculator] = useState(false);
 
     const toggleMobileMenu = () => {
         setMobileMenuOpen(!mobileMenuOpen);
+    };
+
+    const toggleCalculator = () => {
+        setShowCalculator(!showCalculator);
     };
 
     return (
@@ -80,6 +86,22 @@ const HomePage = () => {
                 <img src="/calisaninsan1.png" alt="Arbeitender Mensch" className="full-width-image" />
                 <div className="hero-overlay"></div>
                 <div className="hero-top-overlay"></div>
+
+                {/* Kredi Hesaplama CTA */}
+                <div className="credit-calculator-cta">
+                    <button
+                        className="credit-calculator-button"
+                        onClick={toggleCalculator}
+                    >
+                        {showCalculator ? 'Formular schließen' : 'Kreditberechnung starten'}
+                    </button>
+
+                    {showCalculator && (
+                        <div className="credit-calculator-popup">
+                            <CreditCalculatorForm />
+                        </div>
+                    )}
+                </div>
             </section>
 
             {/* Benefits Section */}

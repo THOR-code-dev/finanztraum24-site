@@ -1,11 +1,15 @@
 .credit-calculator-form {
-    background-color: white;
+    background-color: #222;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     width: 100%;
     max-width: 500px;
     margin: 0 auto;
     padding: 25px;
+    color: #fff;
+    position: relative;
+    min-height: 550px;
+    /* Formun minimum yüksekliği */
 }
 
 .progress-bar {
@@ -48,14 +52,14 @@
 }
 
 .form-step {
-    background-color: white;
+    background-color: #222;
     border-radius: 8px;
     padding: 5px 0;
 }
 
 .form-step h2 {
     margin-bottom: 25px;
-    color: #333;
+    color: #F2CD83;
     font-size: 22px;
     text-align: center;
 }
@@ -67,7 +71,7 @@
 .form-group label {
     display: block;
     margin-bottom: 10px;
-    color: #333;
+    color: #fff;
     font-weight: 600;
     font-size: 16px;
 }
@@ -128,7 +132,9 @@
 .manual-amount-input {
     width: 100%;
     padding: 12px;
-    border: 1px solid #ddd;
+    border: 1px solid #333;
+    background-color: #333;
+    color: #fff;
     border-radius: 6px;
     font-size: 16px;
     font-weight: 500;
@@ -138,9 +144,9 @@
 }
 
 .manual-amount-input:focus {
-    border-color: #004990;
+    border-color: #F2CD83;
     outline: none;
-    box-shadow: 0 0 0 2px rgba(0, 73, 144, 0.1);
+    box-shadow: 0 0 0 2px rgba(242, 205, 131, 0.2);
 }
 
 .currency-symbol {
@@ -148,7 +154,7 @@
     right: 12px;
     top: 50%;
     transform: translateY(-50%);
-    color: #666;
+    color: #F2CD83;
     font-weight: 500;
 }
 
@@ -160,13 +166,15 @@
 .form-select {
     width: 100%;
     padding: 16px;
-    border: 1px solid #ddd;
+    border: 1px solid #333;
+    background-color: #333;
+    color: #fff;
     border-radius: 6px;
     font-size: 16px;
     font-weight: 500;
     transition: border-color 0.3s;
     appearance: none;
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23F2CD83' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
     background-repeat: no-repeat;
     background-position: right 15px center;
     background-size: 15px;
@@ -174,23 +182,24 @@
 }
 
 .form-select:focus {
-    border-color: #004990;
+    border-color: #F2CD83;
     outline: none;
-    box-shadow: 0 0 0 2px rgba(0, 73, 144, 0.1);
+    box-shadow: 0 0 0 2px rgba(242, 205, 131, 0.2);
 }
 
 .results-summary {
-    background-color: #f9f9f9;
+    background-color: #333;
     border-radius: 8px;
     padding: 20px;
     margin-bottom: 25px;
+    border: 1px solid #444;
 }
 
 .result-item {
     display: flex;
     justify-content: space-between;
     padding: 10px 0;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #444;
 }
 
 .result-item:last-child {
@@ -199,16 +208,57 @@
 
 .result-label {
     font-weight: 500;
-    color: var(--text-color);
+    color: #fff;
 }
 
 .result-value {
     font-weight: 700;
-    color: var(--primary-color);
+    color: #F2CD83;
 }
 
-.form-actions {
+.buttons-wrapper {
     margin-top: 20px;
+    height: 140px;
+    /* Butonlar için sabit yükseklik */
+    position: relative;
+    width: 100%;
+}
+
+.calculate-button-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    height: 52px;
+    opacity: 1 !important;
+    visibility: visible !important;
+    z-index: 10;
+}
+
+.calculate-button-container:hover {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.start-form {
+    width: 100%;
+    position: absolute;
+    top: 70px;
+    /* Hesapla butonunun altında 70px boşluk */
+    left: 0;
+    opacity: 1 !important;
+    visibility: visible !important;
+    height: 56px;
+    z-index: 9;
+}
+
+.start-button-container {
+    position: relative;
+    opacity: 1 !important;
+    visibility: visible !important;
+    height: 56px;
+    width: 100%;
 }
 
 .btn {
@@ -219,31 +269,54 @@
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease;
     text-align: center;
+    box-sizing: border-box;
+    height: 52px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    display: block;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+}
+
+.btn:hover {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
 }
 
 .btn-primary {
-    background-color: #FF8A00;
-    color: white;
+    background-color: #F2CD83;
+    color: #000;
     font-size: 18px;
     padding: 16px 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     text-transform: none;
+    height: 56px;
 }
 
 .btn-primary:hover {
-    background-color: #E67A00;
+    background-color: #e6c070;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
 }
 
 .btn-secondary {
-    background-color: #e0e0e0;
-    color: #666;
+    background-color: #444;
+    color: #fff;
 }
 
 .btn-secondary:hover {
-    background-color: #d0d0d0;
+    background-color: #555;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
 }
 
 .btn-success {
