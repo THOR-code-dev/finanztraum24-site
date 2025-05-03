@@ -10,6 +10,7 @@ const CreditCalculatorForm = () => {
         purpose: 'vehicle',
     });
     const [calculatedResults, setCalculatedResults] = useState(null);
+    const [showResults, setShowResults] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -59,8 +60,57 @@ const CreditCalculatorForm = () => {
     const handleQuickCompare = (e) => {
         e.preventDefault();
         e.stopPropagation();
-        // Hızlı karşılaştırma sayfasına yönlendir veya işlem yap
-        navigate('/quick-compare', { state: { formData } });
+        
+        // Faiz oranını kredinin amacına göre belirle
+        let interestRate;
+        switch(formData.purpose) {
+            case 'vehicle':
+                interestRate = 5.9;
+                break;
+            case 'personal':
+                interestRate = 6.5;
+                break;
+            case 'home':
+                interestRate = 4.8;
+                break;
+            case 'education':
+                interestRate = 4.2;
+                break;
+            case 'business':
+                interestRate = 7.5;
+                break;
+            case 'vacation':
+                interestRate = 8.2;
+                break;
+            case 'wedding':
+                interestRate = 7.8;
+                break;
+            default:
+                interestRate = 6.0;
+        }
+        
+        // Aylık faiz oranı (yıllık faiz / 12)
+        const monthlyInterestRate = interestRate / 100 / 12;
+        
+        // Aylık taksit hesaplama formülü
+        const monthlyPayment = formData.amount * monthlyInterestRate * Math.pow(1 + monthlyInterestRate, formData.term) / (Math.pow(1 + monthlyInterestRate, formData.term) - 1);
+        
+        // Toplam geri ödeme
+        const totalPayment = monthlyPayment * formData.term;
+        
+        // Toplam faiz
+        const totalInterest = totalPayment - formData.amount;
+        
+        // Sonuçları ayarla
+        setCalculatedResults({
+            monthlyPayment: monthlyPayment,
+            totalPayment: totalPayment,
+            totalInterest: totalInterest,
+            interestRate: interestRate
+        });
+        
+        // Sonuçları göster
+        setShowResults(true);
     };
 
     const formatCurrency = (value) => {
@@ -134,20 +184,22 @@ const CreditCalculatorForm = () => {
                                     value={formData.purpose}
                                     onChange={handleChange}
                                     className="form-select"
+                                    style={{ color: '#fff', backgroundColor: '#333', border: '1px solid #444' }}
                                 >
-                                    <option value="vehicle">Autokredit</option>
-                                    <option value="personal">Privatkredit</option>
-                                    <option value="home">Wohnkredit</option>
-                                    <option value="education">Bildungskredit</option>
-                                    <option value="business">Geschäftskredit</option>
-                                    <option value="vacation">Urlaubskredit</option>
-                                    <option value="wedding">Hochzeitskredit</option>
+                                    <option value="vehicle" style={{ backgroundColor: '#333', color: '#fff' }}>Autokredit</option>
+                                    <option value="personal" style={{ backgroundColor: '#333', color: '#fff' }}>Privatkredit</option>
+                                    <option value="home" style={{ backgroundColor: '#333', color: '#fff' }}>Wohnkredit</option>
+                                    <option value="education" style={{ backgroundColor: '#333', color: '#fff' }}>Bildungskredit</option>
+                                    <option value="business" style={{ backgroundColor: '#333', color: '#fff' }}>Geschäftskredit</option>
+                                    <option value="vacation" style={{ backgroundColor: '#333', color: '#fff' }}>Urlaubskredit</option>
+                                    <option value="wedding" style={{ backgroundColor: '#333', color: '#fff' }}>Hochzeitskredit</option>
                                 </select>
                             </div>
                         </div>
 
-                        {calculatedResults && (
+                        {showResults && calculatedResults && (
                             <div className="results-summary">
+                                <div className="result-header">Schnellberechnung Ergebnis</div>
                                 <div className="result-item">
                                     <span className="result-label">Monatliche Rate:</span>
                                     <span className="result-value">{formatCurrency(calculatedResults.monthlyPayment)}</span>
@@ -168,31 +220,22 @@ const CreditCalculatorForm = () => {
                         )}
                     </div>
 
-                    <div className="buttons-wrapper">
-                        <div className="button-group">
-                            <form onSubmit={handleQuickCompare} className="quick-compare-form">
-                                <div className="quick-compare-button-container">
-                                    <button
-                                        type="submit"
-                                        className="btn btn-secondary"
-                                        aria-label="Schnell vergleichen"
-                                    >
-                                        Schnell vergleichen
-                                    </button>
-                                </div>
-                            </form>
-                            <form onSubmit={handleSubmit} className="start-form">
-                                <div className="start-button-container">
-                                    <button
-                                        type="submit"
-                                        className="btn btn-primary"
-                                        aria-label="Kreditvergleich starten"
-                                    >
-                                        Kreditvergleich starten
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
+                    <div className="credit-buttons-container">
+                        <button
+                            onClick={handleSubmit}
+                            className="credit-button primary-button"
+                            aria-label="Kreditvergleich starten"
+                        >
+                            Kreditvergleich starten
+                        </button>
+                        
+                        <button
+                            onClick={handleQuickCompare}
+                            className="credit-button secondary-button"
+                            aria-label="Schnell vergleichen"
+                        >
+                            Schnell vergleichen
+                        </button>
                     </div>
                 </div>
             </div>

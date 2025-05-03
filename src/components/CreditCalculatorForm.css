@@ -175,6 +175,8 @@
     font-weight: 500;
     transition: border-color 0.3s;
     appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23F2CD83' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
     background-repeat: no-repeat;
     background-position: right 15px center;
@@ -188,19 +190,62 @@
     box-shadow: 0 0 0 2px rgba(242, 205, 131, 0.2);
 }
 
+/* Select option stillerini düzeltme */
+.form-select option {
+    background-color: #222;
+    color: #fff;
+    padding: 12px;
+    font-size: 16px;
+}
+
+/* Firefox için select option stillerini düzeltme */
+@-moz-document url-prefix() {
+    .form-select {
+        color: #fff;
+        background-color: #333;
+    }
+    
+    .form-select option {
+        background-color: #222;
+        color: #fff;
+    }
+}
+
 .results-summary {
     background-color: #333;
     border-radius: 8px;
     padding: 20px;
-    margin-bottom: 25px;
+    margin: 25px 0;
     border: 1px solid #444;
+    animation: fadeIn 0.5s ease-in-out;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.result-header {
+    color: #F2CD83;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #444;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .result-item {
     display: flex;
     justify-content: space-between;
-    padding: 10px 0;
+    padding: 12px 0;
     border-bottom: 1px solid #444;
+    transition: background-color 0.2s ease;
+}
+
+.result-item:hover {
+    background-color: #3a3a3a;
 }
 
 .result-item:last-child {
@@ -217,101 +262,54 @@
     color: #F2CD83;
 }
 
-.buttons-wrapper {
-    margin-top: 20px;
-    height: 140px;
-    position: relative;
-    width: 100%;
-    z-index: 100;
-    pointer-events: auto;
-}
-
-.button-group {
+.credit-buttons-container {
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
     gap: 15px;
     width: 100%;
 }
 
-.start-form, .quick-compare-form {
+.credit-button {
     width: 100%;
     height: 56px;
-    z-index: 105;
-    pointer-events: auto;
-    touch-action: auto;
-}
-
-.start-button-container, .quick-compare-button-container {
-    position: relative;
-    height: 56px;
-    width: 100%;
-    pointer-events: auto;
-    touch-action: auto;
-}
-
-.btn {
-    width: 100%;
-    padding: 14px 20px;
+    padding: 0 20px;
     border: none;
-    border-radius: 6px;
-    font-size: 16px;
+    border-radius: 8px;
+    font-size: 18px;
     font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
     text-align: center;
-    box-sizing: border-box;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    position: relative;
     display: block;
-    -webkit-tap-highlight-color: rgba(242, 205, 131, 0.3);
-    height: 56px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-.btn:hover,
-.btn:active,
-.btn:focus {
-    outline: none;
+.credit-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
-.btn-primary {
+.credit-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.primary-button {
     background-color: #F2CD83;
     color: #000;
-    font-size: 18px;
-    padding: 16px 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    text-transform: none;
-    height: 56px;
 }
 
-.btn-primary:hover {
+.primary-button:hover {
     background-color: #e6c070;
 }
 
-.btn-success {
-    background-color: #28a745;
-    color: white;
-    height: 56px;
-}
-
-.btn-success:hover {
-    background-color: #218838;
-}
-
-.btn-secondary {
+.secondary-button {
     background-color: #004990;
     color: white;
-    font-size: 18px;
-    padding: 16px 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    text-transform: none;
-    height: 56px;
 }
 
-.btn-secondary:hover {
+.secondary-button:hover {
     background-color: #003a73;
 }
 
@@ -354,12 +352,8 @@
         font-size: 14px;
     }
 
-    .buttons-wrapper {
+    .credit-buttons-container {
         margin-top: 25px;
-        height: 180px;
-    }
-
-    .button-group {
         gap: 12px;
     }
 
