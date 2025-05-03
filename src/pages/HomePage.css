@@ -146,22 +146,35 @@
     padding: 8px 15px !important;
 }
 
+/* Hero Scroll Container - Hero image ve buton için kapsayıcı */
+.hero-scroll-container {
+    position: relative;
+    width: 100%;
+    min-height: 120vh;
+    margin-bottom: 100px;
+    overflow: visible;
+}
+
 /* Hero Image */
 .hero-image-container {
     position: relative;
     width: 100%;
-    height: 120vh;
-    /* Daha da uzun görüntüleme alanı */
-    overflow: visible;
-    /* Taşmaya izin ver */
-    margin-bottom: 100px;
-    /* Alt kısımda ekstra boşluk */
+    height: 100vh;
+    /* Daha kısa bir hero */
+    overflow: hidden;
+    /* Görüntü taşmasını engelle */
+    margin-bottom: 0;
+    /* Alt boşluğu kaldır */
 }
 
 .full-width-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
 
 .hero-overlay {
@@ -171,6 +184,7 @@
     width: 100%;
     height: 100%;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.8) 100%);
+    z-index: 2;
 }
 
 .hero-top-overlay {
@@ -180,43 +194,116 @@
     width: 100%;
     height: 30%;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+    z-index: 3;
 }
 
-/* Kredi Hesaplama CTA */
+/* Kredi Hesaplama CTA - Form bileşenindeki gibi yapılandırılmış */
 .credit-calculator-cta {
-    position: absolute;
-    top: 45%;
-    /* Buton konumunu aşağıya çek */
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
     width: 100%;
     max-width: 550px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: all 0.3s ease;
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    padding: 0;
+    border-radius: 10px;
+    background-color: transparent;
 }
 
-/* Sayfa scroll edildiğinde CTA'nın floating stili */
-.float-cta {
+.credit-calculator-cta .form-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: transparent;
+}
+
+.credit-calculator-cta .form-step {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    padding: 15px;
+    background-color: transparent;
+}
+
+/* Float durumunda buton stilini düzenle */
+.credit-calculator-cta .credit-buttons-container.float-cta {
     position: fixed;
-    top: auto;
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
+    width: auto;
+    min-width: 200px;
     max-width: 500px;
-    z-index: 1000;
-    animation: floatIn 0.3s ease-out;
+    z-index: 9999;
+    background-color: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-radius: 10px;
+    box-shadow: none;
+    margin: 0;
+    padding: 15px 20px;
+    animation: floatIn 0.5s ease-out;
+    border: none;
 }
 
-/* Float-cta içindeki popup pozisyonu */
-.float-cta .credit-calculator-popup {
+/* Form butonları gibi aynı stilinde buton - belirgin */
+.credit-button {
+    width: auto;
+    min-width: 200px;
+    max-width: 500px;
+    height: 56px;
+    padding: 0 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    display: block;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    margin: 0 auto;
+}
+
+.credit-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
+}
+
+.credit-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.primary-button {
+    background-color: #F2CD83;
+    color: #000;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.primary-button:hover {
+    background-color: #F8DA9D;
+}
+
+/* Float modunda popup pozisyonu */
+.credit-buttons-container.float-cta .credit-calculator-popup {
     position: absolute;
-    bottom: calc(100% + 15px);
+    bottom: 100%;
     top: auto;
+    margin-bottom: 15px;
+    left: 0;
+    right: 0;
     max-height: 80vh;
     overflow-y: auto;
+    padding-bottom: 15px;
+    background-color: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-radius: 10px;
+    box-shadow: none;
+    border: none;
 }
 
 @keyframes floatIn {
@@ -231,49 +318,17 @@
     }
 }
 
-.credit-calculator-button {
-    background-color: #F2CD83;
-    color: #000;
-    border: none;
-    padding: 16px 30px;
-    font-size: 18px;
-    font-weight: 600;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-    text-transform: none;
-    margin-bottom: 20px;
-}
-
-.credit-calculator-button:hover {
-    background-color: #e6c070;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
-}
-
 .credit-calculator-popup {
     width: 100%;
     animation: popupFadeIn 0.4s ease-out;
-    max-height: none;
-    /* Sınırsız yükseklik */
-    overflow-y: visible;
-    /* Taşmaya izin ver */
-    padding-bottom: 100px;
-    /* Alt kısımda daha fazla boşluk */
     position: absolute;
     top: 100%;
-    /* Butonun hemen altında başlat */
     margin-top: 15px;
-    /* Buton ile arasında biraz boşluk */
     background-color: transparent;
-    /* Tamamen saydam */
     backdrop-filter: none;
-    /* Blur efekti kaldırıldı */
     -webkit-backdrop-filter: none;
-    /* Safari için blur kaldırıldı */
     border-radius: 10px;
-    /* Köşeleri yumuşat */
+    z-index: 8;
 }
 
 @keyframes popupFadeIn {
@@ -295,6 +350,8 @@
     padding: 120px 0;
     text-align: left;
     overflow: hidden;
+    scroll-snap-align: start;
+    min-height: 100vh;
 }
 
 .hero::before {
@@ -378,8 +435,8 @@
 
 /* Benefits Section */
 .benefits {
-    padding: 250px 0 80px;
-    /* Üst kısımda daha fazla padding */
+    padding-top: 120px;
+    /* Buton için yeterince boşluk */
     background: #000;
     position: relative;
 }
@@ -1109,50 +1166,32 @@
     }
 
     .credit-calculator-cta {
-        top: 40%;
-        /* Mobilde de daha aşağıda */
-        width: 95%;
+        max-width: 450px;
+        padding: 15px;
     }
 
-    .credit-calculator-button {
-        padding: 14px 24px;
-        font-size: 16px;
-    }
-
-    /* Mobil için float-cta stilleri */
-    .float-cta {
+    .credit-calculator-cta .credit-buttons-container.float-cta {
         bottom: 10px;
         width: 95%;
-        max-width: 450px;
+        padding: 8px;
     }
 
-    .float-cta .credit-calculator-button {
-        padding: 12px 20px;
+    .credit-button {
+        padding: 0 15px;
+        height: 48px;
         font-size: 16px;
-        width: 100%;
     }
 
-    .float-cta .credit-calculator-popup {
-        width: 100%;
-        max-height: 70vh;
+    .page-content {
+        overflow: visible;
     }
 
     .hero-image-container {
-        height: auto;
-        min-height: 180vh;
-        /* Daha da fazla yükseklik */
-        margin-bottom: 50px;
-    }
-
-    .credit-calculator-popup {
-        max-height: none;
-        /* Sınırsız yükseklik */
-        overflow-y: visible;
+        height: 100vh;
     }
 
     .benefits {
-        padding: 200px 0 60px;
-        /* Daha da fazla üst padding */
+        padding-top: 100px;
     }
 }
 
@@ -1190,13 +1229,23 @@
     }
 
     .credit-calculator-cta {
-        top: 35%;
-        /* En küçük ekranda da daha aşağıda */
+        max-width: 320px;
+        padding: 10px;
+    }
+
+    .credit-calculator-cta .credit-buttons-container.float-cta {
+        bottom: 5px;
+        width: 92%;
+        padding: 5px;
+    }
+
+    .credit-button {
+        height: 40px;
+        font-size: 14px;
     }
 
     .benefits {
-        padding: 250px 0 60px;
-        /* Daha da fazla üst padding */
+        padding-top: 80px;
     }
 
     .service-card {
@@ -1223,4 +1272,88 @@
     .hero-content-overlay p {
         font-size: 14px;
     }
+
+    .credit-buttons-container.float-cta .credit-calculator-popup {
+        max-height: 70vh;
+    }
+
+    .hero-scroll-container {
+        min-height: 90vh;
+    }
+
+    .hero-image-container {
+        height: 90vh;
+    }
+}
+
+/* Pürüzsüz kaydırma için */
+html,
+body {
+    scroll-behavior: auto;
+}
+
+/* Sayfa içeriği kapsayıcı */
+.page-content {
+    scroll-snap-type: none;
+    overflow-y: visible;
+    height: auto;
+}
+
+/* Hero Image ve diğer bölümlere snap tanımlaması */
+.hero-image-container,
+.benefits,
+.about,
+.stats,
+.services,
+.contact-cta {
+    /* Tüm snap özellikleri kaldırıldı */
+}
+
+/* Bölüm başlıkları için ek stil */
+.benefits h2,
+.about h2,
+.stats h2,
+.services h2,
+.contact-cta h2 {
+    /* Animasyonlu başlık stilleri kaldırıldı */
+}
+
+/* Bölüm içeriği görünür olunca görünme animasyonu */
+@keyframes fadeInUp {
+    from {
+        display: none;
+    }
+
+    to {
+        display: none;
+    }
+}
+
+/* Sayfa dayalı kaydırma navigasyonu */
+.page-navigation {
+    display: none;
+}
+
+.section-indicators {
+    display: none;
+}
+
+.indicator {
+    display: none;
+}
+
+.indicator.active {
+    display: none;
+}
+
+.nav-button {
+    display: none;
+}
+
+.nav-button:hover {
+    display: none;
+}
+
+.nav-button:disabled {
+    display: none;
 }

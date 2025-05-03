@@ -1,7 +1,7 @@
 .credit-calculator-form {
-    background-color: #222;
+    background-color: transparent;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: none;
     width: 100%;
     max-width: 500px;
     margin: 0 auto;
@@ -9,23 +9,17 @@
     color: #fff;
     position: relative;
     min-height: 550px;
+    display: flex;
+    flex-direction: column;
     /* Formun minimum yüksekliği */
 }
 
 /* Sadece HomePage'deki hesap makinesi için saydam stil */
 .homepage .credit-calculator-popup .credit-calculator-form {
     background-color: transparent;
-    /* Tamamen saydam */
-    backdrop-filter: none;
-    /* Blur efekti kaldırıldı */
-    -webkit-backdrop-filter: none;
-    /* Safari için blur kaldırıldı */
     box-shadow: none;
-    /* Gölge yok */
     border: none;
-    /* Kenar çizgisi yok */
-    padding: 5px;
-    /* Padding'i azalt */
+    padding: 15px;
 }
 
 .progress-bar {
@@ -65,20 +59,26 @@
 
 .form-container {
     margin-top: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - 100px);
 }
 
 .form-step {
-    background-color: #222;
+    background-color: transparent;
     border-radius: 8px;
-    padding: 5px 0;
+    padding: 15px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 /* HomePage'deki form-step için tamamen saydam arka plan */
 .homepage .credit-calculator-popup .form-step {
     background-color: transparent;
     box-shadow: none;
-    padding: 0;
-    /* Padding'i kaldır */
+    padding: 15px;
 }
 
 /* Form-fields içindeki tüm alanlar için saydamlık */
@@ -186,8 +186,8 @@
 .manual-amount-input {
     width: 100%;
     padding: 12px;
-    border: 1px solid #333;
-    background-color: #333;
+    border: 2px solid rgba(242, 205, 131, 0.6);
+    background-color: rgba(51, 51, 51, 0.3);
     color: #fff;
     border-radius: 6px;
     font-size: 16px;
@@ -200,16 +200,14 @@
 
 /* HomePage'deki input alanı için saydamlık */
 .homepage .credit-calculator-popup .manual-amount-input {
-    background-color: rgba(51, 51, 51, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
+    background-color: rgba(51, 51, 51, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .manual-amount-input:focus {
     border-color: #F2CD83;
     outline: none;
-    box-shadow: 0 0 0 2px rgba(242, 205, 131, 0.2);
+    box-shadow: 0 0 0 2px rgba(242, 205, 131, 0.4);
 }
 
 .currency-symbol-container {
@@ -238,8 +236,8 @@
 .form-select {
     width: 100%;
     padding: 16px;
-    border: 1px solid #333;
-    background-color: #333;
+    border: 2px solid rgba(242, 205, 131, 0.6);
+    background-color: rgba(51, 51, 51, 0.3);
     color: #fff;
     border-radius: 6px;
     font-size: 16px;
@@ -257,10 +255,8 @@
 
 /* HomePage'deki select için saydamlık */
 .homepage .credit-calculator-popup .form-select {
-    background-color: rgba(51, 51, 51, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
+    background-color: rgba(51, 51, 51, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .form-select:focus {
@@ -291,21 +287,19 @@
 }
 
 .results-summary {
-    background-color: #333;
+    background-color: rgba(51, 51, 51, 0.3);
     border-radius: 8px;
     padding: 20px;
     margin: 25px 0;
-    border: 1px solid #444;
+    border: 2px solid rgba(242, 205, 131, 0.6);
     animation: fadeIn 0.5s ease-in-out;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* HomePage'deki sonuç özeti için saydamlık */
 .homepage .credit-calculator-popup .results-summary {
-    background-color: rgba(51, 51, 51, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.03);
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
+    background-color: rgba(51, 51, 51, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .result-header {
@@ -315,7 +309,7 @@
     margin-bottom: 15px;
     text-align: center;
     padding-bottom: 10px;
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid rgba(242, 205, 131, 0.6);
 }
 
 @keyframes fadeIn {
@@ -334,7 +328,7 @@
     display: flex;
     justify-content: space-between;
     padding: 12px 0;
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid rgba(242, 205, 131, 0.3);
     transition: background-color 0.2s ease;
 }
 
@@ -347,21 +341,38 @@
 }
 
 .result-label {
-    font-weight: 500;
+    font-weight: 600;
     color: #fff;
 }
 
 .result-value {
     font-weight: 700;
     color: #F2CD83;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
+/* Button Container */
 .credit-buttons-container {
-    margin-top: 30px;
+    margin-top: 15px;
     display: flex;
     flex-direction: column;
     gap: 15px;
     width: 100%;
+    position: relative;
+    bottom: auto;
+    z-index: 100;
+    padding: 10px 0;
+    background-color: transparent;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    border-radius: 8px;
+}
+
+/* Saydamlık ayarları - Ana sayfa için özel stil */
+.homepage .credit-calculator-popup .credit-buttons-container {
+    background-color: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: none;
 }
 
 .credit-button {
@@ -371,12 +382,12 @@
     border: none;
     border-radius: 8px;
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
     text-align: center;
     display: block;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .credit-button:hover {
@@ -392,11 +403,12 @@
 .primary-button {
     background-color: #F2CD83;
     color: #000;
+    font-weight: 700;
 }
 
 /* HomePage'deki butonlar için saydamlık */
 .homepage .credit-calculator-popup .primary-button {
-    background-color: rgba(242, 205, 131, 0.7);
+    background-color: #F2CD83;
     border: none;
 }
 
@@ -414,7 +426,7 @@
 }
 
 .homepage .credit-calculator-popup .secondary-button {
-    background-color: rgba(0, 73, 144, 0.4);
+    background-color: #004990;
     border: none;
 }
 
@@ -466,8 +478,9 @@
     }
 
     .credit-buttons-container {
-        margin-top: 25px;
+        margin-top: 15px;
         gap: 12px;
+        padding: 8px 0;
     }
 
     .btn {
@@ -546,4 +559,44 @@
         width: 18px;
         height: 18px;
     }
+
+    .credit-buttons-container {
+        margin-top: 10px;
+        gap: 10px;
+        padding: 5px 0;
+    }
+}
+
+/* Scrollable içerik alanı */
+.scrollable-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0 5px;
+    margin-bottom: 10px;
+    /* FireFox için özel kaydırma çubuğu */
+    scrollbar-width: thin;
+    scrollbar-color: #666 #222;
+}
+
+/* Webkit (Chrome, Safari, Edge) için özel kaydırma çubuğu */
+.scrollable-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.scrollable-content::-webkit-scrollbar-track {
+    background: #222;
+}
+
+.scrollable-content::-webkit-scrollbar-thumb {
+    background-color: #666;
+    border-radius: 6px;
+}
+
+/* HomePage'deki kaydırma çubuğu stilleri için saydamlık */
+.homepage .credit-calculator-popup .scrollable-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.homepage .credit-calculator-popup .scrollable-content::-webkit-scrollbar-thumb {
+    background-color: rgba(102, 102, 102, 0.5);
 }
