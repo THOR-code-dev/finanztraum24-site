@@ -84,6 +84,7 @@
 .slider {
     width: 100%;
     -webkit-appearance: none;
+    appearance: none;
     height: 8px;
     border-radius: 4px;
     background: #e0e0e0;
@@ -225,31 +226,22 @@
     pointer-events: auto;
 }
 
-.calculate-button-container {
-    position: absolute;
-    top: 0;
-    left: 0;
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
     width: 100%;
-    background-color: transparent;
-    height: 52px;
-    z-index: 110;
-    pointer-events: auto;
-    touch-action: auto;
-    cursor: pointer;
 }
 
-.start-form {
+.start-form, .quick-compare-form {
     width: 100%;
-    position: absolute;
-    top: 70px;
-    left: 0;
     height: 56px;
     z-index: 105;
     pointer-events: auto;
     touch-action: auto;
 }
 
-.start-button-container {
+.start-button-container, .quick-compare-button-container {
     position: relative;
     height: 56px;
     width: 100%;
@@ -274,6 +266,7 @@
     position: relative;
     display: block;
     -webkit-tap-highlight-color: rgba(242, 205, 131, 0.3);
+    height: 56px;
 }
 
 .btn:hover,
@@ -297,43 +290,29 @@
     background-color: #e6c070;
 }
 
-.btn-secondary {
-    background-color: #444;
-    color: #fff;
-    position: relative;
-    z-index: 111;
-    cursor: pointer;
-    height: 52px;
-}
-
-.btn-secondary:hover,
-.btn-secondary:active,
-.btn-secondary:focus {
-    background-color: #555;
-    outline: none;
-}
-
-/* Tıklama alanını genişletmek için */
-.btn-secondary::before {
-    content: '';
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
-    z-index: 112;
-    cursor: pointer;
-    pointer-events: none;
-}
-
 .btn-success {
     background-color: #28a745;
     color: white;
-    height: 52px;
+    height: 56px;
 }
 
 .btn-success:hover {
     background-color: #218838;
+}
+
+.btn-secondary {
+    background-color: #004990;
+    color: white;
+    font-size: 18px;
+    padding: 16px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    text-transform: none;
+    height: 56px;
+}
+
+.btn-secondary:hover {
+    background-color: #003a73;
 }
 
 @media (max-width: 768px) {
@@ -377,25 +356,14 @@
 
     .buttons-wrapper {
         margin-top: 25px;
-        height: 150px;
+        height: 180px;
     }
 
-    .calculate-button-container {
-        height: 56px;
-        top: 0;
-    }
-
-    .start-form {
-        top: 80px;
+    .button-group {
+        gap: 12px;
     }
 
     .btn {
-        height: 56px;
-        padding: 16px;
-        font-size: 18px;
-    }
-
-    .btn-secondary {
         height: 56px;
         padding: 16px;
         font-size: 18px;

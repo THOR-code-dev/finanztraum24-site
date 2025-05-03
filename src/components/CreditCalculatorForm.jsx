@@ -56,24 +56,11 @@ const CreditCalculatorForm = () => {
         navigate('/application');
     };
 
-    // Kredi hesaplama fonksiyonu
-    const calculateCredit = (e) => {
+    const handleQuickCompare = (e) => {
         e.preventDefault();
-        e.stopPropagation(); // Event yayılımını durdur
-
-        // Basit faiz hesaplaması (örnek olarak)
-        const interestRate = 0.0495; // %4.95 örnek faiz oranı
-        const monthlyInterestRate = interestRate / 12;
-        const monthlyPayment = (formData.amount * monthlyInterestRate) / (1 - Math.pow(1 + monthlyInterestRate, -formData.term));
-        const totalPayment = monthlyPayment * formData.term;
-        const totalInterest = totalPayment - formData.amount;
-
-        setCalculatedResults({
-            monthlyPayment: monthlyPayment.toFixed(2),
-            totalPayment: totalPayment.toFixed(2),
-            totalInterest: totalInterest.toFixed(2),
-            interestRate: (interestRate * 100).toFixed(2)
-        });
+        e.stopPropagation();
+        // Hızlı karşılaştırma sayfasına yönlendir veya işlem yap
+        navigate('/quick-compare', { state: { formData } });
     };
 
     const formatCurrency = (value) => {
@@ -182,28 +169,30 @@ const CreditCalculatorForm = () => {
                     </div>
 
                     <div className="buttons-wrapper">
-                        <div className="calculate-button-container">
-                            <button
-                                type="button"
-                                onClick={calculateCredit}
-                                className="btn btn-secondary"
-                                aria-label="Berechnen"
-                            >
-                                Berechnen
-                            </button>
+                        <div className="button-group">
+                            <form onSubmit={handleQuickCompare} className="quick-compare-form">
+                                <div className="quick-compare-button-container">
+                                    <button
+                                        type="submit"
+                                        className="btn btn-secondary"
+                                        aria-label="Schnell vergleichen"
+                                    >
+                                        Schnell vergleichen
+                                    </button>
+                                </div>
+                            </form>
+                            <form onSubmit={handleSubmit} className="start-form">
+                                <div className="start-button-container">
+                                    <button
+                                        type="submit"
+                                        className="btn btn-primary"
+                                        aria-label="Kreditvergleich starten"
+                                    >
+                                        Kreditvergleich starten
+                                    </button>
+                                </div>
+                            </form>
                         </div>
-
-                        <form onSubmit={handleSubmit} className="start-form">
-                            <div className="start-button-container">
-                                <button
-                                    type="submit"
-                                    className="btn btn-primary"
-                                    aria-label="Kreditvergleich starten"
-                                >
-                                    Kreditvergleich starten
-                                </button>
-                            </div>
-                        </form>
                     </div>
                 </div>
             </div>
