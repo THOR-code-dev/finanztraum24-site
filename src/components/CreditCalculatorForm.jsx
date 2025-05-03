@@ -147,13 +147,17 @@ const CreditCalculatorForm = () => {
                                 </div>
                             </div>
                             <div className="manual-input-container">
-                                <input
-                                    type="text"
-                                    value={formData.amount}
-                                    onChange={handleManualAmountChange}
-                                    className="manual-amount-input"
-                                />
-                                <span className="currency-symbol">€</span>
+                                <div className="input-with-currency">
+                                    <input
+                                        type="text"
+                                        value={formData.amount}
+                                        onChange={handleManualAmountChange}
+                                        className="manual-amount-input"
+                                    />
+                                    <div className="currency-symbol-container">
+                                        <span className="currency-symbol">€</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 

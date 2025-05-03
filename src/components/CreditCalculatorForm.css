@@ -123,11 +123,15 @@
 
 /* Manuel giriş kutusu stilleri */
 .manual-input-container {
+    margin: 15px auto 0;
+    max-width: 200px;
+}
+
+.input-with-currency {
+    position: relative;
     display: flex;
     align-items: center;
-    margin: 15px auto 0;
-    position: relative;
-    max-width: 200px;
+    width: 100%;
 }
 
 .manual-amount-input {
@@ -141,7 +145,7 @@
     font-weight: 500;
     transition: border-color 0.3s;
     text-align: right;
-    padding-right: 30px;
+    padding-right: 35px; /* Para birimi için daha fazla boşluk */
 }
 
 .manual-amount-input:focus {
@@ -150,15 +154,22 @@
     box-shadow: 0 0 0 2px rgba(242, 205, 131, 0.2);
 }
 
-.currency-symbol {
+.currency-symbol-container {
     position: absolute;
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.currency-symbol {
     color: #F2CD83;
     font-weight: 500;
-    pointer-events: none; /* Tıklamayı engelleme */
-    z-index: 1; /* Sembolün üstte olmasını sağlama */
+    font-size: 16px;
 }
 
 .select-wrapper {
@@ -399,17 +410,21 @@
     
     /* Mobil görünümde manuel giriş alanı düzenlemeleri */
     .manual-input-container {
-        position: relative;
         max-width: 150px;
     }
     
     .manual-amount-input {
-        padding-right: 25px;
+        padding-right: 30px;
         font-size: 14px;
+        padding: 10px;
+        padding-right: 30px;
+    }
+    
+    .currency-symbol-container {
+        width: 25px;
     }
     
     .currency-symbol {
-        right: 8px;
         font-size: 14px;
     }
 
