@@ -157,6 +157,8 @@
     transform: translateY(-50%);
     color: #F2CD83;
     font-weight: 500;
+    pointer-events: none; /* Tıklamayı engelleme */
+    z-index: 1; /* Sembolün üstte olmasını sağlama */
 }
 
 .select-wrapper {
@@ -393,6 +395,22 @@
         font-size: 14px;
         background-size: 12px;
         background-position: right 12px center;
+    }
+    
+    /* Mobil görünümde manuel giriş alanı düzenlemeleri */
+    .manual-input-container {
+        position: relative;
+        max-width: 150px;
+    }
+    
+    .manual-amount-input {
+        padding-right: 25px;
+        font-size: 14px;
+    }
+    
+    .currency-symbol {
+        right: 8px;
+        font-size: 14px;
     }
 
     .btn-primary {
