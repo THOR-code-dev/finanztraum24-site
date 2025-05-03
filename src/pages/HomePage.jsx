@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './HomePage.css';
 import { Link } from 'react-router-dom';
 import { FaHome, FaIdCard, FaChartLine, FaCheckCircle, FaHandshake, FaPhone, FaUser, FaBars } from 'react-icons/fa';
@@ -7,6 +7,7 @@ import CreditCalculatorForm from '../components/CreditCalculatorForm';
 const HomePage = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [showCalculator, setShowCalculator] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
 
     const toggleMobileMenu = () => {
         setMobileMenuOpen(!mobileMenuOpen);
@@ -15,6 +16,24 @@ const HomePage = () => {
     const toggleCalculator = () => {
         setShowCalculator(!showCalculator);
     };
+
+    // Scroll olayını dinle
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollTop = window.scrollY;
+            if (scrollTop > 100) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     return (
         <div className="homepage">
@@ -88,7 +107,7 @@ const HomePage = () => {
                 <div className="hero-top-overlay"></div>
 
                 {/* Kredi Hesaplama CTA */}
-                <div className="credit-calculator-cta">
+                <div className={`credit-calculator-cta ${isScrolled ? 'float-cta' : ''}`}>
                     <button
                         className="credit-calculator-button"
                         onClick={toggleCalculator}

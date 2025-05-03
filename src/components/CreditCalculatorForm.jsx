@@ -60,10 +60,10 @@ const CreditCalculatorForm = () => {
     const handleQuickCompare = (e) => {
         e.preventDefault();
         e.stopPropagation();
-        
+
         // Faiz oranını kredinin amacına göre belirle
         let interestRate;
-        switch(formData.purpose) {
+        switch (formData.purpose) {
             case 'vehicle':
                 interestRate = 5.9;
                 break;
@@ -88,19 +88,19 @@ const CreditCalculatorForm = () => {
             default:
                 interestRate = 6.0;
         }
-        
+
         // Aylık faiz oranı (yıllık faiz / 12)
         const monthlyInterestRate = interestRate / 100 / 12;
-        
+
         // Aylık taksit hesaplama formülü
         const monthlyPayment = formData.amount * monthlyInterestRate * Math.pow(1 + monthlyInterestRate, formData.term) / (Math.pow(1 + monthlyInterestRate, formData.term) - 1);
-        
+
         // Toplam geri ödeme
         const totalPayment = monthlyPayment * formData.term;
-        
+
         // Toplam faiz
         const totalInterest = totalPayment - formData.amount;
-        
+
         // Sonuçları ayarla
         setCalculatedResults({
             monthlyPayment: monthlyPayment,
@@ -108,7 +108,7 @@ const CreditCalculatorForm = () => {
             totalInterest: totalInterest,
             interestRate: interestRate
         });
-        
+
         // Sonuçları göster
         setShowResults(true);
     };
@@ -232,7 +232,7 @@ const CreditCalculatorForm = () => {
                         >
                             Kreditvergleich starten
                         </button>
-                        
+
                         <button
                             onClick={handleQuickCompare}
                             className="credit-button secondary-button"

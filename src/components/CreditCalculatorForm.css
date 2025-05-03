@@ -12,6 +12,22 @@
     /* Formun minimum yüksekliği */
 }
 
+/* Sadece HomePage'deki hesap makinesi için saydam stil */
+.homepage .credit-calculator-popup .credit-calculator-form {
+    background-color: transparent;
+    /* Tamamen saydam */
+    backdrop-filter: none;
+    /* Blur efekti kaldırıldı */
+    -webkit-backdrop-filter: none;
+    /* Safari için blur kaldırıldı */
+    box-shadow: none;
+    /* Gölge yok */
+    border: none;
+    /* Kenar çizgisi yok */
+    padding: 5px;
+    /* Padding'i azalt */
+}
+
 .progress-bar {
     display: flex;
     align-items: center;
@@ -57,6 +73,24 @@
     padding: 5px 0;
 }
 
+/* HomePage'deki form-step için tamamen saydam arka plan */
+.homepage .credit-calculator-popup .form-step {
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+    /* Padding'i kaldır */
+}
+
+/* Form-fields içindeki tüm alanlar için saydamlık */
+.homepage .credit-calculator-popup .form-fields {
+    background-color: transparent;
+}
+
+/* Form-group içindeki tüm alanlar için saydamlık */
+.homepage .credit-calculator-popup .form-group {
+    background-color: transparent;
+}
+
 .form-step h2 {
     margin-bottom: 25px;
     color: #F2CD83;
@@ -91,6 +125,11 @@
     outline: none;
 }
 
+/* HomePage'deki slider için hafif saydamlık */
+.homepage .credit-calculator-popup .slider {
+    background: rgba(224, 224, 224, 0.7);
+}
+
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -103,6 +142,11 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+.homepage .credit-calculator-popup .slider::-webkit-slider-thumb {
+    background: rgba(0, 73, 144, 0.9);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
 .slider::-moz-range-thumb {
     width: 20px;
     height: 20px;
@@ -111,6 +155,11 @@
     cursor: pointer;
     border: 2px solid white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.homepage .credit-calculator-popup .slider::-moz-range-thumb {
+    background: rgba(0, 73, 144, 0.9);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 }
 
 .slider-labels {
@@ -145,7 +194,16 @@
     font-weight: 500;
     transition: border-color 0.3s;
     text-align: right;
-    padding-right: 35px; /* Para birimi için daha fazla boşluk */
+    padding-right: 35px;
+    /* Para birimi için daha fazla boşluk */
+}
+
+/* HomePage'deki input alanı için saydamlık */
+.homepage .credit-calculator-popup .manual-amount-input {
+    background-color: rgba(51, 51, 51, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
 }
 
 .manual-amount-input:focus {
@@ -197,6 +255,14 @@
     cursor: pointer;
 }
 
+/* HomePage'deki select için saydamlık */
+.homepage .credit-calculator-popup .form-select {
+    background-color: rgba(51, 51, 51, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
 .form-select:focus {
     border-color: #F2CD83;
     outline: none;
@@ -217,7 +283,7 @@
         color: #fff;
         background-color: #333;
     }
-    
+
     .form-select option {
         background-color: #222;
         color: #fff;
@@ -234,6 +300,14 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* HomePage'deki sonuç özeti için saydamlık */
+.homepage .credit-calculator-popup .results-summary {
+    background-color: rgba(51, 51, 51, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
 .result-header {
     color: #F2CD83;
     font-size: 18px;
@@ -245,8 +319,15 @@
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .result-item {
@@ -313,8 +394,18 @@
     color: #000;
 }
 
+/* HomePage'deki butonlar için saydamlık */
+.homepage .credit-calculator-popup .primary-button {
+    background-color: rgba(242, 205, 131, 0.7);
+    border: none;
+}
+
 .primary-button:hover {
-    background-color: #e6c070;
+    background-color: rgba(242, 205, 131, 0.8);
+}
+
+.homepage .credit-calculator-popup .primary-button:hover {
+    background-color: rgba(242, 205, 131, 0.8);
 }
 
 .secondary-button {
@@ -322,8 +413,17 @@
     color: white;
 }
 
+.homepage .credit-calculator-popup .secondary-button {
+    background-color: rgba(0, 73, 144, 0.4);
+    border: none;
+}
+
 .secondary-button:hover {
-    background-color: #003a73;
+    background-color: rgba(0, 73, 144, 0.6);
+}
+
+.homepage .credit-calculator-popup .secondary-button:hover {
+    background-color: rgba(0, 73, 144, 0.6);
 }
 
 @media (max-width: 768px) {
@@ -407,23 +507,23 @@
         background-size: 12px;
         background-position: right 12px center;
     }
-    
+
     /* Mobil görünümde manuel giriş alanı düzenlemeleri */
     .manual-input-container {
         max-width: 150px;
     }
-    
+
     .manual-amount-input {
         padding-right: 30px;
         font-size: 14px;
         padding: 10px;
         padding-right: 30px;
     }
-    
+
     .currency-symbol-container {
         width: 25px;
     }
-    
+
     .currency-symbol {
         font-size: 14px;
     }

@@ -195,6 +195,40 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: all 0.3s ease;
+}
+
+/* Sayfa scroll edildiğinde CTA'nın floating stili */
+.float-cta {
+    position: fixed;
+    top: auto;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 500px;
+    z-index: 1000;
+    animation: floatIn 0.3s ease-out;
+}
+
+/* Float-cta içindeki popup pozisyonu */
+.float-cta .credit-calculator-popup {
+    position: absolute;
+    bottom: calc(100% + 15px);
+    top: auto;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+@keyframes floatIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
 }
 
 .credit-calculator-button {
@@ -232,6 +266,14 @@
     /* Butonun hemen altında başlat */
     margin-top: 15px;
     /* Buton ile arasında biraz boşluk */
+    background-color: transparent;
+    /* Tamamen saydam */
+    backdrop-filter: none;
+    /* Blur efekti kaldırıldı */
+    -webkit-backdrop-filter: none;
+    /* Safari için blur kaldırıldı */
+    border-radius: 10px;
+    /* Köşeleri yumuşat */
 }
 
 @keyframes popupFadeIn {
@@ -1075,6 +1117,24 @@
     .credit-calculator-button {
         padding: 14px 24px;
         font-size: 16px;
+    }
+
+    /* Mobil için float-cta stilleri */
+    .float-cta {
+        bottom: 10px;
+        width: 95%;
+        max-width: 450px;
+    }
+
+    .float-cta .credit-calculator-button {
+        padding: 12px 20px;
+        font-size: 16px;
+        width: 100%;
+    }
+
+    .float-cta .credit-calculator-popup {
+        width: 100%;
+        max-height: 70vh;
     }
 
     .hero-image-container {

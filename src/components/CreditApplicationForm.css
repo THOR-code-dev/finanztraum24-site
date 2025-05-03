@@ -1423,6 +1423,203 @@
     margin-bottom: 15px;
 }
 
+/* Mevcut Krediler adımı için stiller */
+.counter-section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 30px 0;
+}
+
+.credit-counter-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f8f8;
+    border-radius: 50px;
+    padding: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.credit-counter-container .counter-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #fff;
+    background-color: #004990;
+}
+
+.credit-counter-container .counter-btn:hover {
+    background-color: #003a73;
+}
+
+.credit-counter-container .counter-btn.decrease {
+    background-color: #ccc;
+    color: #333;
+}
+
+.credit-counter-container .counter-btn.decrease:hover {
+    background-color: #bbb;
+}
+
+.credit-counter-container .counter-btn:disabled {
+    background-color: #e0e0e0;
+    color: #999;
+    cursor: not-allowed;
+}
+
+.credit-counter-container .counter-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: #333;
+    padding: 0 30px;
+    min-width: 60px;
+    text-align: center;
+}
+
+.form-info-box {
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    border-left: 4px solid #004990;
+}
+
+.form-info-text {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Kredi detay formları için stiller */
+.credit-detail-form {
+    background-color: #222;
+    border-radius: 8px;
+    padding: 25px;
+    margin: 25px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border: 1px solid #333;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.credit-detail-title {
+    color: #F2CD83;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #333;
+}
+
+.input-with-currency {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #333;
+    color: #fff;
+}
+
+.form-input:focus {
+    border-color: #F2CD83;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(242, 205, 131, 0.2);
+}
+
+.form-input::placeholder {
+    color: #777;
+}
+
+.currency-symbol {
+    position: absolute;
+    right: 12px;
+    color: #F2CD83;
+    font-weight: 500;
+    pointer-events: none;
+}
+
+.form-hint {
+    font-size: 12px;
+    color: #aaa;
+    margin-top: 5px;
+    line-height: 1.4;
+}
+
+.info-icon-container {
+    display: inline-flex;
+    margin-left: 10px;
+    position: relative;
+}
+
+.info-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #004990;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.tooltip {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 300px;
+    background-color: #333;
+    border: 1px solid #444;
+    border-radius: 4px;
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #fff;
+    line-height: 1.5;
+}
+
+/* Kredi tutarı ayarlama bölümü için stiller */
+.credit-amount-adjustment {
+    background-color: #222;
+    border-radius: 8px;
+    padding: 25px;
+    margin: 30px 0;
+    border: 1px solid #333;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.section-title {
+    color: #F2CD83;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.radio-subtext {
+    font-size: 14px;
+    color: #aaa;
+    margin-top: 5px;
+}
+
 /* Nebentaetigkeiten counter styling */
 .nebentaetigkeiten-counter {
     background-color: #fff;
