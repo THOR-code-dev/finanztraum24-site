@@ -219,9 +219,10 @@
 .buttons-wrapper {
     margin-top: 20px;
     height: 140px;
-    /* Butonlar için sabit yükseklik */
     position: relative;
     width: 100%;
+    z-index: 100;
+    pointer-events: auto;
 }
 
 .calculate-button-container {
@@ -231,34 +232,29 @@
     width: 100%;
     background-color: transparent;
     height: 52px;
-    opacity: 1 !important;
-    visibility: visible !important;
-    z-index: 10;
-}
-
-.calculate-button-container:hover {
-    opacity: 1 !important;
-    visibility: visible !important;
+    z-index: 110;
+    pointer-events: auto;
+    touch-action: auto;
+    cursor: pointer;
 }
 
 .start-form {
     width: 100%;
     position: absolute;
     top: 70px;
-    /* Hesapla butonunun altında 70px boşluk */
     left: 0;
-    opacity: 1 !important;
-    visibility: visible !important;
     height: 56px;
-    z-index: 9;
+    z-index: 105;
+    pointer-events: auto;
+    touch-action: auto;
 }
 
 .start-button-container {
     position: relative;
-    opacity: 1 !important;
-    visibility: visible !important;
     height: 56px;
     width: 100%;
+    pointer-events: auto;
+    touch-action: auto;
 }
 
 .btn {
@@ -272,21 +268,18 @@
     transition: background-color 0.3s ease;
     text-align: center;
     box-sizing: border-box;
-    height: 52px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     position: relative;
     display: block;
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: none !important;
+    -webkit-tap-highlight-color: rgba(242, 205, 131, 0.3);
 }
 
-.btn:hover {
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: none !important;
+.btn:hover,
+.btn:active,
+.btn:focus {
+    outline: none;
 }
 
 .btn-primary {
@@ -302,26 +295,41 @@
 
 .btn-primary:hover {
     background-color: #e6c070;
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: none !important;
 }
 
 .btn-secondary {
     background-color: #444;
     color: #fff;
+    position: relative;
+    z-index: 111;
+    cursor: pointer;
+    height: 52px;
 }
 
-.btn-secondary:hover {
+.btn-secondary:hover,
+.btn-secondary:active,
+.btn-secondary:focus {
     background-color: #555;
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: none !important;
+    outline: none;
+}
+
+/* Tıklama alanını genişletmek için */
+.btn-secondary::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    z-index: 112;
+    cursor: pointer;
+    pointer-events: none;
 }
 
 .btn-success {
     background-color: #28a745;
     color: white;
+    height: 52px;
 }
 
 .btn-success:hover {
@@ -365,6 +373,32 @@
     .manual-amount-input {
         padding: 10px;
         font-size: 14px;
+    }
+
+    .buttons-wrapper {
+        margin-top: 25px;
+        height: 150px;
+    }
+
+    .calculate-button-container {
+        height: 56px;
+        top: 0;
+    }
+
+    .start-form {
+        top: 80px;
+    }
+
+    .btn {
+        height: 56px;
+        padding: 16px;
+        font-size: 18px;
+    }
+
+    .btn-secondary {
+        height: 56px;
+        padding: 16px;
+        font-size: 18px;
     }
 }
 
