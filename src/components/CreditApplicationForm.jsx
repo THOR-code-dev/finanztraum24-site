@@ -136,11 +136,11 @@ const CreditApplicationForm = () => {
         // Warmmiete alanı için özel kontrol
         if (name === 'warmMiete') {
             if (value === '') {
-                setWarmMieteError('Bu alan gereklidir.');
+                setWarmMieteError('Dieses Feld ist erforderlich.');
             } else if (parseFloat(value) > 30000) {
-                setWarmMieteError('Tutar 30.000 ₺ tutarını aşamaz.');
+                setWarmMieteError('Der Betrag darf nicht mehr als 30.000 € betragen.');
             } else {
-                setWarmMieteError('');
+                setWarmMieteError(''); // Hata yoksa temizle
             }
         }
     };
@@ -388,7 +388,7 @@ const CreditApplicationForm = () => {
 
             <div className="form-header">
                 <div className="form-header-content">
-                    <h1 className="form-title">Kredi Başvurusu</h1>
+                    <h1 className="form-title">Kreditantrag</h1>
                     <div className="progress-container">
                         <div className="progress-bar">
                             <div className="progress-fill" style={{ width: `${calculateProgress()}%` }}></div>
@@ -418,7 +418,7 @@ const CreditApplicationForm = () => {
                                 className="btn btn-secondary"
                                 onClick={goToPreviousStep}
                             >
-                                Geri
+                                Zurück
                             </motion.button>
                         )}
                         <motion.button
@@ -428,7 +428,7 @@ const CreditApplicationForm = () => {
                             className="btn btn-primary"
                             onClick={goToNextStep}
                         >
-                            {step === 14 ? 'Tamamla' : 'Devam'}
+                            {step === 14 ? 'Abschließen' : 'Weiter'}
                         </motion.button>
                     </div>
                 </motion.div>
@@ -442,7 +442,7 @@ const CreditApplicationForm = () => {
                 </div>
                 <div className="security-info">
                     <span className="security-icon">🔒</span>
-                    <span>Güvenli SSL bağlantısı ile verileriniz korunmaktadır</span>
+                    <span>Ihre Daten werden mit sicherer SSL-Verbindung übertragen</span>
                 </div>
             </div>
         </div>
