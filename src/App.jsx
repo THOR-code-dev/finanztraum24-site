@@ -1,10 +1,65 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import CreditCalculatorForm from './components/CreditCalculatorForm';
-import CreditApplicationPage from './pages/CreditApplicationPage';
-import HomePage from './pages/HomePage';
-import OnBasvuruPage from './pages/OnBasvuruPage';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import { usePageTransition } from './hooks/useAnimations.jsx';
+import Home from './pages/HomePage.jsx';
+import Form from './pages/Form.jsx';
+import Offers from './pages/Offers.jsx';
+import CreditApplicationPage from './pages/CreditApplicationPage.jsx';
+import CreditCalculatorForm from './pages/CreditCalculatorForm.jsx';
+import OnBasvuruPage from './pages/OnBasvuruPage.jsx';
 import './App.css';
+
+// Sayfa geçişleri için kullanılacak animasyon bileşeni
+const AnimatedRoutes = () => {
+    const location = useLocation();
+    const { isExiting, isEntering } = usePageTransition();
+
+    // Sayfa geçiş animasyonları için varsayılan değerler
+    const pageTransition = {
+        initial: { opacity: 0, y: 20 },
+        animate: { opacity: 1, y: 0 },
+        exit: { opacity: 0, y: -20 },
+        transition: { duration: 0.4, ease: "easeInOut" }
+    };
+
+    return (
+        <AnimatePresence mode="wait">
+            <Routes location={location} key={location.pathname}>
+                <Route path="/application" element={
+                    <motion.div {...pageTransition}>
+                        <CreditApplicationPage />
+                    </motion.div>
+                } />
+                <Route path="/credit-application" element={
+                    <motion.div {...pageTransition}>
+                        <CreditApplicationPage />
+                    </motion.div>
+                } />
+                <Route path="/kredi-hesaplama" element={
+                    <motion.div {...pageTransition}>
+                        <CreditCalculatorForm />
+                    </motion.div>
+                } />
+                <Route path="/on-basvuru" element={
+                    <motion.div {...pageTransition}>
+                        <OnBasvuruPage />
+                    </motion.div>
+                } />
+                <Route path="/offers" element={
+                    <motion.div {...pageTransition}>
+                        <Offers />
+                    </motion.div>
+                } />
+                <Route path="/" element={
+                    <motion.div {...pageTransition}>
+                        <Home />
+                    </motion.div>
+                } />
+            </Routes>
+        </AnimatePresence>
+    );
+};
 
 function App() {
     useEffect(() => {
@@ -17,13 +72,7 @@ function App() {
 
     return (
         <Router>
-            <Routes>
-                <Route path="/application" element={<CreditApplicationPage />} />
-                <Route path="/credit-application" element={<CreditApplicationPage />} />
-                <Route path="/kredi-hesaplama" element={<CreditCalculatorForm />} />
-                <Route path="/on-basvuru" element={<OnBasvuruPage />} />
-                <Route path="/" element={<HomePage />} />
-            </Routes>
+            <AnimatedRoutes />
         </Router>
     );
 }

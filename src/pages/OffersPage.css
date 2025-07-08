@@ -1,0 +1,147 @@
+.offers-container{
+  max-width:900px;
+  margin:40px auto;
+  padding:40px;
+  background:linear-gradient(135deg,#111 0%, #0a0a0a 100%);
+  border-radius:12px;
+  box-shadow:0 10px 40px rgba(0,0,0,0.7),0 0 80px rgba(242,205,131,0.1);
+  color:#fff;
+  overflow:hidden;
+  font-family:'Montserrat','Segoe UI',Arial,sans-serif;
+  border:1px solid rgba(255,255,255,0.05);
+}
+/* animated gradient background */
+.offers-container:before{
+  content:"";
+  position:absolute;inset:-50px;
+  background:conic-gradient(from 180deg at 50% 50%, #3b3b3b 0deg, #1a1a1a 120deg, #2d2d2d 240deg, #3b3b3b 360deg);
+  animation:rotateBg 20s linear infinite;
+  z-index:-1;
+  filter:blur(120px) saturate(160%);
+}
+@keyframes rotateBg{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+
+
+.offers-container h1{
+  font-size:32px;
+  color:var(--accent-color);
+  margin-bottom:30px;
+  text-align:left;
+}
+
+.offers-table{
+  width:100%;
+  border-collapse:collapse;
+  background:var(--secondary-color);
+  border:1px solid var(--border-color);
+  border-radius:8px;
+  overflow:hidden;
+}
+
+.offers-table th,
+.offers-table td{
+  padding:14px 20px;
+  text-align:center;
+  border-bottom:1px solid var(--border-color);
+}
+
+.offers-table th{
+  background:var(--accent-color);
+  color:#000;
+  font-weight:600;
+  text-transform:uppercase;
+  font-size:14px;
+}
+
+.offers-table tr:nth-child(even){
+  background:#181818;
+}
+
+.offers-table tr:hover{
+  background:rgba(242,205,131,0.05);
+}
+
+.offers-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+  gap:24px;
+}
+
+.offer-card{
+  position:relative;
+  background:rgba(24,24,24,0.6);
+  backdrop-filter:blur(8px) saturate(180%);
+  -webkit-backdrop-filter:blur(8px) saturate(180%);
+  border-radius:16px;
+  padding:32px 24px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  overflow:hidden;
+  transition:transform 0.4s cubic-bezier(.25,.8,.25,1),box-shadow 0.4s;
+  animation:fadeInCard 0.6s ease forwards;
+}
+@keyframes fadeInCard{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.offer-card:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  padding:2px;
+  background:linear-gradient(135deg,rgba(242,205,131,0.8),rgba(255,255,255,0.05) 40%,rgba(255,255,255,0) 60%,rgba(242,205,131,0.4));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+  pointer-events:none;
+  transition:opacity 0.4s;
+  opacity:0.6;
+}
+.offer-card:hover{
+  transform:translateY(-8px) scale(1.02);
+  box-shadow:0 12px 30px rgba(0,0,0,0.6);
+}
+.offer-card:hover:before{opacity:1}
+
+.bank-logo{
+  width:60px;height:60px;object-fit:contain;margin-bottom:12px;
+}
+.bank-name{font-size:20px;font-weight:600;margin-bottom:16px;color:#fff}
+.offer-details{width:100%;margin-bottom:20px}
+.detail-item{display:flex;justify-content:space-between;margin-bottom:8px;font-size:14px;color:#ddd}
+.detail-label{color:#aaa}
+.detail-value{font-weight:600;color:var(--accent-color)}
+.btn-primary.select-offer{
+  position:relative;
+
+  background:var(--accent-color);
+  color:#000;
+  padding:10px 20px;
+  border:none;
+  border-radius:50px;
+  font-weight:600;
+  cursor:pointer;
+  transition:background 0.3s ease;
+  overflow:hidden;
+
+}
+.btn-primary.select-offer:after{
+  content:"";
+  position:absolute;
+  top:50%;left:50%;
+  width:0;height:0;
+  background:rgba(0,0,0,0.15);
+  border-radius:50%;
+  transform:translate(-50%,-50%);
+  transition:width .6s ease,height .6s ease;
+}
+.btn-primary.select-offer:hover:after{
+  width:200%;height:200%;
+}
+.btn-primary.select-offer:hover{
+  background:var(--accent-hover);
+}
+
+@media(max-width:768px){
+  .offers-container{padding:20px 15px;margin:0 10px;}
+  .offers-table th,.offers-table td{padding:10px 12px;font-size:14px;}
+}

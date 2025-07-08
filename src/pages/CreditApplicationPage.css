@@ -2,26 +2,27 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background: linear-gradient(135deg, #000000 0%, #111111 100%);
-    color: #fff;
-    font-family: 'Montserrat', 'Segoe UI', sans-serif;
+    background-color: #000000;
+    /* Siyah arka plan */
+    color: #FFFFFF;
+    /* Beyaz metin */
+    font-family: 'Montserrat', 'Arial', sans-serif;
 }
 
 /* Header */
 .application-header {
-    background-color: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    padding: 18px 24px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+    background-color: #000000;
+    /* Siyah arka plan */
+    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    position: relative;
+    border-bottom: 1px solid #333333;
+    /* Koyu gri kenarlık */
+    position: sticky;
+    top: 0;
     z-index: 100;
-    height: auto;
-    min-height: 80px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .logo-container {
@@ -36,11 +37,11 @@
 
 .logo-text {
     color: #F2CD83;
-    background: linear-gradient(135deg, #F2CD83 0%, #e0b15e 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    /* Altın rengi */
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: transform 0.3s ease;
 }
 
 .logo-text:hover {
@@ -50,11 +51,13 @@
 
 .logo-dot {
     color: #F2CD83;
+    /* Altın rengi */
     font-size: 32px;
 }
 
 .logo-de {
     color: #F2CD83;
+    /* Altın rengi */
     font-size: 22px;
 }
 
@@ -62,10 +65,12 @@
     width: 12px;
     height: 12px;
     background-color: #F2CD83;
+    /* Altın rengi */
     border-radius: 50%;
     margin-right: 15px;
     position: relative;
     box-shadow: 0 0 10px rgba(242, 205, 131, 0.7);
+    /* Altın rengi gölge */
 }
 
 .logo-pulse::before {
@@ -75,6 +80,7 @@
     height: 100%;
     border-radius: 50%;
     background-color: rgba(242, 205, 131, 0.6);
+    /* Altın rengi */
     transform: scale(1);
     animation: pulse 2s infinite;
 }
@@ -100,7 +106,8 @@
     display: flex;
     align-items: center;
     gap: 15px;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(51, 51, 51, 0.3);
+    /* Yarı saydam koyu gri */
     padding: 10px 20px;
     border-radius: 50px;
     backdrop-filter: blur(5px);
@@ -110,21 +117,24 @@
 
 .contact-info:hover {
     background: rgba(242, 205, 131, 0.1);
+    /* Altın rengi arka plan */
     transform: translateY(-2px);
 }
 
 .contact-text {
     font-size: 14px;
-    color: #ddd;
+    color: #FFFFFF;
+    /* Beyaz metin */
     text-align: right;
     font-weight: 300;
     letter-spacing: 0.5px;
 }
 
 .contact-phone {
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 16px;
+    font-weight: 500;
     color: #F2CD83;
+    /* Altın rengi */
     transition: color 0.3s ease;
 }
 
@@ -134,38 +144,43 @@
     justify-content: center;
     width: 40px;
     height: 40px;
-    background: linear-gradient(135deg, #F2CD83 0%, #e0b15e 100%);
-    color: #000;
+    background: linear-gradient(135deg, #F2CD83 0%, #E5C070 100%);
+    /* Altın rengi gradient */
+    color: #000000;
+    /* Siyah metin */
     border-radius: 50%;
     box-shadow: 0 4px 15px rgba(242, 205, 131, 0.3);
+    /* Altın rengi gölge */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .phone-icon:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 20px rgba(242, 205, 131, 0.4);
+    /* Altın rengi gölge */
 }
 
 /* Main Content */
 .application-main {
     flex: 1;
-    padding: 50px 20px;
-    max-width: 1000px;
-    width: 100%;
+    padding: 2rem;
+    max-width: 1200px;
     margin: 0 auto;
+    width: 100%;
     position: relative;
     z-index: 1;
 }
 
 /* Footer */
 .application-footer {
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #ddd;
+    background-color: #111111;
+    /* Koyu gri arka plan */
+    padding: 1.5rem 2rem;
     text-align: center;
-    padding: 30px 0;
-    margin-top: auto;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    position: relative;
+    border-top: 1px solid #333333;
+    /* Koyu gri kenarlık */
+    color: #AAAAAA;
+    /* Açık gri metin */
 }
 
 .footer-content {
@@ -184,6 +199,7 @@
 
 .footer-links a {
     color: #F2CD83;
+    /* Altın rengi */
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
@@ -200,6 +216,7 @@
     bottom: -4px;
     left: 0;
     background-color: #F2CD83;
+    /* Altın rengi */
     transition: width 0.3s ease;
 }
 
@@ -207,52 +224,195 @@
     width: 100%;
 }
 
-.footer-links a:hover {
-    transform: translateY(-2px);
+/* Floating particles */
+.floating-particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1;
 }
 
-/* Responsive Design */
+.particle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(242, 205, 131, 0.2);
+    border-radius: 50%;
+    animation: float-particle 8s infinite ease-in-out;
+}
+
+.particle:nth-child(2) {
+    width: 15px;
+    height: 15px;
+    background-color: rgba(242, 205, 131, 0.15);
+}
+
+.particle:nth-child(3) {
+    width: 25px;
+    height: 25px;
+    background-color: rgba(242, 205, 131, 0.1);
+}
+
+.particle:nth-child(4) {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(242, 205, 131, 0.25);
+}
+
+.particle:nth-child(5) {
+    width: 30px;
+    height: 30px;
+    background-color: rgba(242, 205, 131, 0.05);
+}
+
+@keyframes float-particle {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0);
+    }
+
+    25% {
+        transform: translateY(-30px) translateX(20px) rotate(90deg);
+    }
+
+    50% {
+        transform: translateY(0) translateX(40px) rotate(180deg);
+    }
+
+    75% {
+        transform: translateY(30px) translateX(20px) rotate(270deg);
+    }
+
+    100% {
+        transform: translateY(0) translateX(0) rotate(360deg);
+    }
+}
+
+/* Logo animasyonu */
+.logo-pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+}
+
+/* Telefon ikonu animasyonu */
+.phone-icon {
+    position: relative;
+    overflow: hidden;
+}
+
+.phone-icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 70%);
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    animation: phone-ring 2s infinite;
+}
+
+@keyframes phone-ring {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+
+    10% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+
+    20% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0;
+    }
+}
+
+/* Footer link animasyonları */
+.footer-links a {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.footer-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.footer-links a:hover::after {
+    width: 100%;
+}
+
 @media (max-width: 768px) {
     .application-header {
+        padding: 1rem;
         flex-direction: column;
-        gap: 15px;
-        padding: 15px;
+        gap: 10px;
         height: auto;
     }
 
     .logo-container {
-        margin-bottom: 5px;
+        margin-bottom: 10px;
     }
 
     .contact-info {
         width: 100%;
         justify-content: center;
-        padding: 8px 15px;
     }
 
     .application-main {
-        padding: 20px 10px;
+        padding: 1rem;
     }
 
     .footer-links {
         gap: 15px;
-        flex-direction: column;
     }
 }
 
 @media (max-width: 480px) {
     .logo-container {
-        font-size: 24px;
+        font-size: 22px;
     }
 
     .contact-phone {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .contact-info {
-        padding: 8px 12px;
+        padding: 8px 15px;
         flex-wrap: wrap;
-        gap: 10px;
+        justify-content: center;
     }
 
     .footer-content {
@@ -260,95 +420,6 @@
     }
 
     .application-footer {
-        padding: 20px 0;
-    }
-}
-
-/* Floating Particles */
-.floating-particles {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: 0;
-    pointer-events: none;
-}
-
-.particle {
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    background: linear-gradient(135deg, #F2CD83 0%, rgba(242, 205, 131, 0.2) 100%);
-    border-radius: 50%;
-    opacity: 0.5;
-    animation: float 15s infinite ease-in-out;
-}
-
-.particle:nth-child(1) {
-    top: 10%;
-    left: 10%;
-    width: 12px;
-    height: 12px;
-    animation-delay: 0s;
-    animation-duration: 20s;
-}
-
-.particle:nth-child(2) {
-    top: 30%;
-    left: 85%;
-    width: 8px;
-    height: 8px;
-    animation-delay: 2s;
-    animation-duration: 25s;
-}
-
-.particle:nth-child(3) {
-    top: 70%;
-    left: 20%;
-    width: 14px;
-    height: 14px;
-    animation-delay: 4s;
-    animation-duration: 18s;
-}
-
-.particle:nth-child(4) {
-    top: 50%;
-    left: 80%;
-    width: 10px;
-    height: 10px;
-    animation-delay: 6s;
-    animation-duration: 22s;
-}
-
-.particle:nth-child(5) {
-    top: 85%;
-    left: 50%;
-    width: 9px;
-    height: 9px;
-    animation-delay: 8s;
-    animation-duration: 17s;
-}
-
-@keyframes float {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-    }
-
-    25% {
-        transform: translate(-50px, 50px) rotate(90deg);
-    }
-
-    50% {
-        transform: translate(50px, 100px) rotate(180deg);
-    }
-
-    75% {
-        transform: translate(100px, -50px) rotate(270deg);
-    }
-
-    100% {
-        transform: translate(0, 0) rotate(360deg);
+        padding: 1rem;
     }
 }

@@ -1,0 +1,163 @@
+.offers-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-xl) 0;
+}
+
+.offers-header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.offers-header h1 {
+  color: var(--primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.offers-header .summary {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+}
+
+.offers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.offer-card {
+  background: var(--bg-light);
+  border-radius: 16px;
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  border-left: 4px solid var(--primary);
+}
+
+.offer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.offer-card.featured {
+  border-left-color: var(--accent);
+}
+
+.offer-card.featured:hover {
+  border-left-color: var(--accent-dark);
+}
+
+.offer-card .bank-logo {
+  width: 100px;
+  height: 50px;
+  object-fit: contain;
+  margin-bottom: var(--spacing-md);
+}
+
+.offer-card .interest {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.offer-card .monthly {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-md);
+}
+
+.offer-card .details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+}
+
+.offer-card .details span {
+  display: block;
+  color: var(--text-secondary);
+}
+
+.offer-card .details strong {
+  display: block;
+  color: var(--text-primary);
+}
+
+.offer-card .cta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.offer-card .cta button {
+  flex: 1;
+  margin: 0 var(--spacing-sm);
+}
+
+/* Comparison */
+.compare-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.compare-container {
+  background: var(--bg-light);
+  border-radius: 16px;
+  padding: var(--spacing-xl);
+  max-width: 1000px;
+  width: 90vw;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.compare-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+}
+
+.compare-header {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.compare-item {
+  border: 1px solid var(--border-primary);
+  border-radius: 8px;
+  padding: var(--spacing-md);
+}
+
+.compare-item h3 {
+  color: var(--primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.compare-item .value {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .offers-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .compare-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .compare-item {
+    padding: var(--spacing-sm);
+  }
+}

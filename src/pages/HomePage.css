@@ -318,23 +318,47 @@
     }
 }
 
+/* Kredi hesaplama popup stilleri */
 .credit-calculator-popup {
-    width: 100%;
-    animation: popupFadeIn 0.4s ease-out;
     position: absolute;
-    top: 100%;
-    margin-top: 15px;
-    background-color: transparent;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    border-radius: 10px;
-    z-index: 8;
+    top: calc(100% + 10px);
+    left: 0;
+    width: 100%;
+    max-width: 500px;
+    min-width: 350px;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    animation: popupFadeIn 0.4s ease-out forwards;
+    overflow: hidden;
+    height: 600px;
+    /* Sabit yükseklik */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Float CTA durumunda popup stilini düzenle */
+.credit-buttons-container.float-cta .credit-calculator-popup {
+    position: fixed;
+    top: 80px;
+    left: auto;
+    right: 20px;
+    width: 400px;
+    height: 600px;
+    /* Sabit yükseklik */
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.95);
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(242, 205, 131, 0.3);
+    z-index: 1000;
 }
 
 @keyframes popupFadeIn {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(-10px);
     }
 
     to {
@@ -1193,6 +1217,21 @@
     .benefits {
         padding-top: 100px;
     }
+
+    .credit-calculator-popup {
+        width: 100%;
+        max-width: 100%;
+        height: 600px;
+        /* Sabit yükseklik */
+    }
+
+    .credit-buttons-container.float-cta .credit-calculator-popup {
+        width: 90%;
+        right: 5%;
+        left: 5%;
+        height: 600px;
+        /* Sabit yükseklik */
+    }
 }
 
 @media (max-width: 480px) {
@@ -1283,6 +1322,15 @@
 
     .hero-image-container {
         height: 90vh;
+    }
+
+    .credit-buttons-container.float-cta .credit-calculator-popup {
+        width: 95%;
+        right: 2.5%;
+        left: 2.5%;
+        top: 70px;
+        height: 600px;
+        /* Sabit yükseklik */
     }
 }
 

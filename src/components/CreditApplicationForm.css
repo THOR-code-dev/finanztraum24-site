@@ -1,52 +1,48 @@
 /* Renk paleti değişkenleri */
 :root {
-    --primary-color: #000000;
-    /* Siyah - ana renk */
+    --primary-color: #F2CD83;
+    /* Altın rengi - Ana sayfadaki altın renkli vurgular */
     --secondary-color: #111111;
-    /* Koyu gri - ikincil renk */
+    /* Koyu arka plan rengi */
     --accent-color: #F2CD83;
-    /* Altın - vurgu rengi */
-    --accent-hover: #e0b15e;
-    /* Altın hover rengi */
+    /* Altın rengi - Vurgu için */
+    --accent-hover: #E5C070;
+    /* Altın renginin hover durumu */
     --success-color: #4CAF50;
-    /* Yeşil - başarı rengi */
-    --light-bg: #222;
-    /* Koyu gri - arka plan */
-    --dark-text: #FFF;
-    /* Beyaz - metin rengi */
-    --border-color: #333;
-    /* Gri - kenarlık rengi */
+    /* Başarı rengi - yeşil kalabilir */
+    --light-bg: #000000;
+    /* Siyah arka plan */
+    --dark-text: #FFFFFF;
+    /* Beyaz metin */
+    --border-color: #333333;
+    /* Koyu gri kenarlıklar */
     --hover-color: #F2CD83;
-    /* Altın - hover durumu */
+    /* Altın rengi - hover durumu */
     --error-color: #E53E3E;
-    /* Kırmızı - hata durumu */
+    /* Hata rengi - kırmızı kalabilir */
 }
 
 .credit-application-form {
     max-width: 900px;
     width: 100%;
     margin: 0 auto;
-    padding: 40px;
-    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
-    background: linear-gradient(135deg, #111 0%, #0a0a0a 100%);
-    border-radius: 12px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7),
-        0 0 80px rgba(242, 205, 131, 0.1);
+    padding: 2rem;
+    font-family: 'Montserrat', 'Arial', sans-serif;
+    background-color: #000000;
+    /* Siyah arka plan */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     position: relative;
     overflow: hidden;
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: #FFFFFF;
+    /* Beyaz metin */
+    border: 1px solid #333333;
+    /* Koyu gri kenarlık */
 }
 
 .credit-application-form::before {
     content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--accent-color), var(--accent-hover));
-    z-index: 1;
+    display: none;
 }
 
 /* Progress Bar */
@@ -66,26 +62,21 @@
 }
 
 .progress-bar {
-    height: 12px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 100px;
+    height: 8px;
+    background-color: #333333;
+    /* Koyu gri arka plan */
+    border-radius: 4px;
     overflow: hidden;
     position: relative;
-    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .progress-fill {
     height: 100%;
-    background: linear-gradient(90deg, #4CAF50, #2E7D32);
-    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-    background-size: 20px 20px;
-    border-radius: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding-left: 15px;
+    background: linear-gradient(90deg, #F2CD83, #E5C070);
+    /* Altın rengi gradient */
+    border-radius: 4px;
     transition: width 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-    animation: progress-bar-stripes 2s linear infinite;
 }
 
 @keyframes progress-bar-stripes {
@@ -101,7 +92,8 @@
 .progress-percentage {
     position: absolute;
     left: 15px;
-    color: #000;
+    color: #FFFFFF;
+    /* Beyaz metin */
     font-size: 12px;
     font-weight: bold;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
@@ -117,6 +109,7 @@
     min-height: 450px;
     position: relative;
     width: 100%;
+    background-color: #000000 !important;
 }
 
 @keyframes fadeIn {
@@ -163,17 +156,22 @@
     }
 }
 
+/* Form etiketleri ve başlıkları için güçlendirilmiş stiller */
 .form-title {
     font-size: 32px;
     font-weight: 700;
-    color: var(--accent-color);
+    color: var(--accent-color) !important;
+    /* Altın rengi başlık */
     text-align: left;
     margin-bottom: 30px;
+    margin-top: 20px;
     transition: transform 0.3s ease;
     position: relative;
     align-self: flex-start;
     line-height: 1.2;
     letter-spacing: -0.5px;
+    display: block !important;
+    width: 100%;
 }
 
 .form-title:after {
@@ -182,6 +180,7 @@
     width: 70px;
     height: 3px;
     background: linear-gradient(90deg, var(--accent-color), var(--accent-hover));
+    /* Altın rengi gradient */
     bottom: -15px;
     left: 0;
     transform: none;
@@ -195,6 +194,7 @@
     align-self: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     filter: drop-shadow(0 5px 15px rgba(242, 205, 131, 0.2));
+    /* Altın rengi gölge */
 }
 
 .certification-badge:hover {
@@ -209,9 +209,11 @@
 
 .form-info {
     margin-top: 24px;
-    padding: 8px;
-    background-color: transparent;
-    border-left: none;
+    padding: 15px;
+    background-color: rgba(51, 51, 51, 0.5);
+    /* Yarı saydam koyu gri */
+    border-left: 3px solid var(--accent-color);
+    /* Altın rengi kenar */
     border-radius: 4px;
     text-align: left;
 }
@@ -219,7 +221,8 @@
 .credit-application-form .form-info p {
     margin: 0 0 20px 0;
     line-height: 1.5;
-    color: #f8f8f8 !important;
+    color: #FFFFFF !important;
+    /* Beyaz metin */
     text-align: left;
 }
 
@@ -229,87 +232,138 @@
 
 /* Form Controls */
 .form-group {
+    margin-bottom: 25px;
     width: 100%;
     position: relative;
-    margin-bottom: 35px;
-    transition: margin-bottom 0.3s ease, transform 0.3s ease;
+    border-radius: 8px;
+    padding: 5px;
 }
 
 .form-group:hover {
-    transform: translateY(-2px);
+    background-color: transparent;
 }
 
 .form-group.has-active-tooltip {
-    margin-bottom: 150px;
-    transition: margin-bottom 0.3s ease;
+    background-color: transparent;
 }
 
+/* Form Labels ve Başlıklar için genel stil düzeltmeleri */
+.form-label,
+label,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.section-title,
+.nebentaetigkeit-title,
+.form-title {
+    color: var(--accent-color) !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Form label için ek düzenlemeler */
 .form-label {
-    display: block;
-    font-weight: 800;
-    font-size: 20px;
-    color: #f8f8f8;
-    margin-bottom: 20px;
-    text-align: left;
+    display: block !important;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--accent-color) !important;
     letter-spacing: 0.5px;
+    width: 100%;
+    text-align: left;
+    background-color: transparent !important;
+    position: relative;
+    z-index: 2;
+    text-shadow: none !important;
+}
+
+/* Tüm başlıklar için ek düzenlemeler */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.form-title,
+.section-title,
+.nebentaetigkeit-title {
+    color: var(--accent-color) !important;
+    background-color: transparent !important;
+    text-shadow: none !important;
+    position: relative;
+    z-index: 2;
+}
+
+/* Mavi arka plan düzeltmesi */
+.form-label[style*="background-color"] {
+    background-color: transparent !important;
 }
 
 .radio-options {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: 15px;
     width: 100%;
 }
 
 /* Anzahl Kreditnehmer bölümündeki radio buttonlar için özel stiller */
+.radio-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.radio-icon {
+    font-size: 24px;
+    color: var(--accent-color);
+    margin-bottom: 8px;
+}
+
+.radio-description {
+    font-size: 14px;
+    color: #AAAAAA;
+    font-weight: normal;
+    margin-top: 5px;
+}
+
 .radio-container {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     position: relative;
-    padding: 18px 20px;
-    border: 1px solid rgba(78, 42, 132, 0.6);
-    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #444;
+    border-radius: 8px;
     cursor: pointer;
-    transition: all 0.25s ease;
-    overflow: hidden;
-    background: rgba(25, 25, 35, 0.9);
-    margin-bottom: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    width: 100%;
+    transition: all 0.3s ease;
+    background-color: #111111;
+    flex: 1;
+    min-width: 200px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 .radio-container:hover {
-    border-color: #F2CD83;
-    background: rgba(53, 15, 88, 0.8);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), 0 0 10px rgba(242, 205, 131, 0.3);
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    background-color: #111111;
+    /* Hover durumunda bile arka plan rengi değişmeyecek */
 }
 
-.radio-container:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 4px;
-    height: 0%;
-    background: linear-gradient(to bottom, #F2CD83, #e0b15e);
-    transition: height 0.3s ease;
-}
-
-.radio-container input:checked~.radio-checkmark:after {
-    transform: scale(1);
-    opacity: 1;
-}
-
-.radio-container input:checked~.radio-text {
-    color: #F2CD83;
+.radio-container input:checked~.radio-content .radio-text {
+    color: var(--accent-color) !important;
     font-weight: 600;
-    text-shadow: 0 0 10px rgba(242, 205, 131, 0.3);
+}
+
+.radio-container input:checked~.radio-content .radio-icon {
+    transform: scale(1.1);
 }
 
 .radio-container input:checked {
-    border-color: #F2CD83;
-    background: linear-gradient(135deg, rgba(53, 15, 88, 0.9), rgba(78, 42, 132, 0.8));
+    border-color: var(--accent-color);
 }
 
 .radio-container input:checked~.radio-container:before {
@@ -326,21 +380,20 @@
 
 .radio-checkmark {
     position: relative;
-    width: 24px;
-    height: 24px;
-    border: 2px solid #8A4FFF;
+    width: 22px;
+    height: 22px;
+    border: 2px solid #555;
     border-radius: 50%;
     margin-right: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    box-shadow: 0 0 8px rgba(138, 79, 255, 0.5);
+    transition: all 0.2s ease;
 }
 
 .radio-container input:checked~.radio-checkmark {
-    border-color: #F2CD83;
-    box-shadow: 0 0 12px rgba(242, 205, 131, 0.6);
+    border-color: var(--accent-color);
 }
 
 .radio-container input:checked~.radio-checkmark:after {
@@ -349,7 +402,7 @@
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background-color: #F2CD83;
+    background-color: var(--accent-color);
     transform: scale(1);
     opacity: 1;
     transition: all 0.2s ease;
@@ -361,11 +414,10 @@
 }
 
 .radio-text {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
     transition: color 0.3s ease;
-    color: #f8f8f8;
-    letter-spacing: 0.5px;
+    color: #FFFFFF;
 }
 
 /* Form Actions */
@@ -394,25 +446,25 @@
     letter-spacing: 0.5px;
 }
 
-.btn-back {
+.btn-secondary {
     background-color: transparent;
     color: #fff;
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.btn-back:hover:not(:disabled) {
+.btn-secondary:hover:not(:disabled) {
     border-color: var(--accent-color);
     color: var(--accent-color);
     transform: translateX(-5px);
 }
 
-.btn-next {
+.btn-primary {
     background: linear-gradient(90deg, var(--accent-color), var(--accent-hover));
     color: #000;
     box-shadow: 0 4px 15px rgba(242, 205, 131, 0.3);
 }
 
-.btn-next:hover {
+.btn-primary:hover {
     background: linear-gradient(90deg, var(--accent-hover), var(--accent-color));
     transform: translateX(5px);
     box-shadow: 0 6px 20px rgba(242, 205, 131, 0.4);
@@ -424,16 +476,17 @@
     align-items: center;
     justify-content: center;
     margin-top: 40px;
-    color: #555;
+    color: #AAAAAA;
     gap: 10px;
     animation: fadeIn 1s ease-in-out;
 }
 
 .lock-icon {
-    color: var(--success-color);
+    color: var(--accent-color);
     display: flex;
     align-items: center;
     animation: pulse 2s infinite;
+    font-size: 24px;
 }
 
 @keyframes pulse {
@@ -580,6 +633,10 @@
     .btn {
         padding: 10px 18px;
         font-size: 14px;
+    }
+
+    .form-label.insurance-question {
+        font-size: 18px;
     }
 }
 
@@ -859,7 +916,8 @@
 }
 
 .collapsible-btn:hover {
-    background-color: rgba(26, 54, 93, 0.1);
+    background-color: #111111;
+    color: var(--accent-color);
 }
 
 .collapsible-content {
@@ -907,48 +965,45 @@
 .counter-control {
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
+    justify-content: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+    background-color: #111111;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #333333;
 }
 
 .counter-btn {
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    border: none;
-    background-color: #eee;
-    color: #333;
+    background-color: #222222;
+    border: 1px solid #444444;
+    color: #FFFFFF;
     font-size: 20px;
-    font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.counter-btn.decrease {
-    background-color: #eee;
-}
-
-.counter-btn.increase {
-    background-color: var(--primary-color);
-    color: white;
+    transition: all 0.3s ease;
 }
 
 .counter-btn:hover:not(:disabled) {
-    transform: scale(1.05);
+    background-color: #333333;
+    border-color: var(--accent-color);
 }
 
 .counter-btn:disabled {
-    opacity: 0.5;
+    opacity: 0.4;
     cursor: not-allowed;
 }
 
 .counter-value {
-    padding: 0 20px;
-    font-size: 18px;
+    font-size: 24px;
     font-weight: 600;
-    min-width: 40px;
+    color: #FFFFFF;
+    min-width: 30px;
     text-align: center;
 }
 
@@ -960,28 +1015,29 @@
 .figures-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
-    margin-bottom: 20px;
-    max-width: 400px;
+    gap: 10px;
+    margin-top: 15px;
 }
 
 .person-figure {
-    width: 24px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    color: var(--primary-color);
-    transition: all 0.2s ease-in-out;
+    justify-content: center;
+    border-radius: 50%;
+    color: #000000;
+    background-color: var(--accent-color);
+    margin-right: 5px;
+    margin-bottom: 5px;
 }
 
 .adult-figure {
-    color: var(--primary-color);
+    background-color: var(--accent-color);
 }
 
 .child-figure {
-    color: var(--secondary-color);
-    transform: scale(0.85);
+    background-color: var(--accent-hover);
 }
 
 .counter-info {
@@ -1018,9 +1074,14 @@
 }
 
 .radio-simple-container .radio-text {
-    margin-left: 10px;
-    display: inline-block;
     font-size: 16px;
+    font-weight: 500;
+    color: var(--dark-text);
+    transition: color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.4;
 }
 
 .radio-simple-container input:checked~.radio-checkmark:after {
@@ -1051,8 +1112,12 @@
     cursor: pointer;
 }
 
+.radio-simple-container:hover {
+    background-color: #111111;
+}
+
 .radio-simple-container:hover .radio-text {
-    color: var(--primary-color);
+    color: var(--accent-color);
 }
 
 /* Konut Durumu Stilleri */
@@ -1064,59 +1129,66 @@
 }
 
 .housing-option {
-    width: 100%;
+    position: relative;
 }
 
 .housing-option input[type="radio"] {
-    display: none;
+    position: absolute;
+    opacity: 0;
 }
 
 .housing-option label {
     display: flex;
     align-items: center;
-    padding: 8px 0;
+    padding: 15px;
+    background-color: #111111;
+    border: 1px solid #444444;
+    border-radius: 8px;
     cursor: pointer;
-    background-color: transparent;
-    border: none;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 500;
 }
 
 .housing-option label:hover {
-    color: #003E82;
+    border-color: var(--accent-color);
 }
 
 .housing-option input[type="radio"]:checked+label {
-    font-weight: 600;
-    color: var(--primary-color);
+    border-color: var(--accent-color);
+    background-color: #222222;
+    color: var(--accent-color);
 }
 
 .radio-dot {
     position: relative;
-    display: inline-block;
     width: 22px;
     height: 22px;
-    border: 2px solid var(--primary-color);
+    border: 2px solid #555555;
     border-radius: 50%;
     margin-right: 15px;
-    vertical-align: middle;
-    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .radio-dot:after {
     content: '';
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
     width: 12px;
     height: 12px;
-    background-color: var(--primary-color);
     border-radius: 50%;
-    transition: transform 0.2s ease;
+    background-color: transparent;
+    transition: all 0.2s ease;
+}
+
+.housing-option input[type="radio"]:checked+label .radio-dot {
+    border-color: var(--accent-color);
 }
 
 .housing-option input[type="radio"]:checked+label .radio-dot:after {
-    transform: translate(-50%, -50%) scale(1);
+    background-color: var(--accent-color);
 }
 
 /* Vermietete Immobilie page styles */
@@ -1273,7 +1345,9 @@
 }
 
 .info-icon:hover {
-    background-color: var(--hover-color);
+    background-color: var(--accent-color);
+    color: #000000;
+    box-shadow: none;
 }
 
 .info-tooltip {
@@ -1330,29 +1404,29 @@
     align-items: center;
     width: 100%;
     margin-bottom: 20px;
+    background-color: transparent !important;
 }
 
 .income-input-wrapper {
     position: relative;
     flex-grow: 1;
+    background-color: transparent !important;
 }
 
 .income-input {
     width: 100%;
-    padding: 15px;
+    padding: 15px 80px 15px 15px !important;
     font-size: 16px;
-    border: 1px solid #ccc;
+    border: 1px solid #333;
     border-radius: 6px;
-}
-
-.income-input::placeholder {
-    color: #999;
+    background-color: #222 !important;
+    color: #fff !important;
 }
 
 .income-input:focus {
     outline: none;
-    border-color: var(--secondary-color);
-    box-shadow: 0 0 0 2px rgba(0, 150, 199, 0.2);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(242, 205, 131, 0.2);
 }
 
 .income-currency {
@@ -1360,37 +1434,33 @@
     right: 15px;
     top: 50%;
     transform: translateY(-50%);
-    color: #666;
-    font-size: 16px;
+    color: var(--accent-color) !important;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: transparent !important;
 }
 
 .income-info-icon {
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
-    background-color: var(--secondary-color);
-    color: #fff;
+    background-color: #222;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color) !important;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-left: 8px;
     cursor: pointer;
-    font-weight: bold;
-    font-size: 14px;
+    font-size: 16px;
     position: relative;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.income-info-icon span {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    line-height: 1;
 }
 
 .income-info-icon:hover {
-    background-color: var(--hover-color);
+    background-color: var(--accent-color);
+    color: #000000 !important;
 }
 
 .income-tooltip {
@@ -1398,12 +1468,13 @@
     left: 0;
     right: 0;
     top: 100%;
-    background-color: rgba(26, 54, 93, 0.05);
+    background-color: rgba(34, 34, 34, 0.95) !important;
+    border: 1px solid var(--accent-color) !important;
     padding: 15px;
     margin-top: 10px;
     border-radius: 6px;
-    color: var(--primary-color);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    color: #FFFFFF !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     z-index: 100;
     font-size: 14px;
     line-height: 1.5;
@@ -1729,4 +1800,708 @@
 .credit-application-form img {
     max-width: 100%;
     height: auto;
+}
+
+/* Sigorta seçeneği özel stilleri */
+.insurance-option {
+    padding: 15px 10px;
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.2s ease;
+}
+
+.insurance-option:last-child {
+    border-bottom: none;
+}
+
+.insurance-option:hover {
+    background-color: #111111;
+    border-color: var(--accent-color);
+}
+
+.insurance-option-title {
+    font-weight: 600;
+    font-size: 17px;
+    color: #eee;
+    margin-bottom: 4px;
+}
+
+.insurance-option-description {
+    font-size: 14px;
+    color: #bbb;
+    font-weight: 400;
+}
+
+/* Seçili sigorta seçeneği */
+.radio-simple-container input:checked~.radio-text .insurance-option-title {
+    color: var(--accent-color);
+}
+
+/* Açılır bilgi kutusu için ek stil */
+.collapsible-info.warum-fragen-wir-das {
+    background-color: rgba(242, 205, 131, 0.05);
+    border: 1px solid rgba(242, 205, 131, 0.2);
+    margin-bottom: 30px;
+}
+
+.collapsible-info.warum-fragen-wir-das .collapsible-btn {
+    color: #eee;
+    font-weight: 500;
+}
+
+.collapsible-info.warum-fragen-wir-das .collapsible-content p {
+    color: #ddd;
+}
+
+/* Sigorta sorusu etiketi */
+.form-label.insurance-question {
+    margin-bottom: 15px;
+}
+
+/* Bilgilendirme notu */
+.form-hint.insurance-hint {
+    font-size: 13px;
+    color: #999;
+    margin-top: 25px;
+    text-align: left;
+    line-height: 1.5;
+}
+
+/* Responsive Ayarlamalar (Gerekirse eklenebilir) */
+@media (max-width: 768px) {
+    .insurance-option-title {
+        font-size: 16px;
+    }
+
+    .insurance-option-description {
+        font-size: 13px;
+    }
+
+    .form-label.insurance-question {
+        font-size: 18px;
+    }
+}
+
+/* ================================== */
+/* ===== YENİ ADIM 14 STİLLERİ ===== */
+/* ================================== */
+
+/* Banka Bilgileri Adımı Açılır Kutu */
+.collapsible-info.bank-info-collapse {
+    background-color: rgba(230, 240, 255, 0.95);
+    /* Açık mavi arka plan */
+    border: 1px solid #b3d1ff;
+    margin-bottom: 30px;
+}
+
+.collapsible-info.bank-info-collapse .collapsible-btn {
+    color: #004085;
+    /* Koyu mavi metin */
+    font-weight: 600;
+}
+
+.collapsible-info.bank-info-collapse .collapsible-content p {
+    color: #004085;
+}
+
+/* Banka Prosedürü Tabları */
+.bank-procedure-tabs {
+    display: flex;
+    margin-bottom: 25px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.tab-option {
+    flex: 1;
+    padding: 15px 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    text-align: center;
+    color: #aaa;
+    /* Pasif renk */
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.tab-option:hover {
+    background-color: #111111;
+    border-color: var(--accent-color);
+}
+
+.tab-option.active {
+    color: var(--accent-color);
+    /* Aktif renk */
+    border-bottom-color: var(--accent-color);
+    font-weight: 600;
+}
+
+.tab-icon {
+    font-size: 20px;
+    line-height: 1;
+}
+
+.tab-text {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Fayda Listesi */
+.benefits-list {
+    list-style: none;
+    padding: 0 0 20px 0;
+    margin: 0 0 25px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    color: #eee;
+    font-size: 15px;
+}
+
+.benefit-icon {
+    margin-right: 10px;
+    color: var(--success-color);
+    /* Yeşil checkmark */
+    font-size: 18px;
+}
+
+.benefit-text {
+    font-weight: 500;
+}
+
+/* Banka İpucu */
+.form-hint.bank-hint {
+    font-size: 13px;
+    color: #aaa;
+    margin-top: 8px;
+}
+
+/* Güven Mühürleri (Sayfa Sonu) */
+.trust-seals-final {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    flex-wrap: wrap;
+}
+
+.trust-seals-final img {
+    height: 40px;
+    /* İkon boyutunu ayarla */
+    max-width: 100px;
+    object-fit: contain;
+}
+
+.trust-seals-final span {
+    font-size: 13px;
+    color: #bbb;
+    text-align: center;
+}
+
+/* Mobil için ek düzenlemeler */
+@media (max-width: 768px) {
+    .tab-text {
+        font-size: 12px;
+    }
+
+    .benefit-item {
+        font-size: 14px;
+    }
+
+    .trust-seals-final {
+        gap: 15px;
+    }
+
+    .trust-seals-final img {
+        height: 35px;
+    }
+
+    .trust-seals-final span {
+        font-size: 12px;
+    }
+}
+
+.marital-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.marital-options .radio-container {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    min-height: 60px;
+}
+
+.marital-options .radio-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.marital-options .radio-icon {
+    margin-bottom: 0;
+    font-size: 20px;
+}
+
+.marital-options .radio-text {
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.radio-container input:checked~.radio-checkmark:after {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Radio butonların görünürlük sorunu düzeltmesi */
+.radio-checkmark:after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    transform: scale(0);
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+
+.radio-container input:checked~.radio-checkmark:after {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Marital options için hover stillerini düzenleme */
+.marital-options .radio-container:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    background-color: #111111;
+    /* Hover durumunda bile arka plan rengi değişmeyecek */
+}
+
+/* Gayrimenkul sayfası stilleri */
+.immobilie-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.immobilie-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 15px;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.immobilie-container .radio-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.immobilie-container .radio-icon {
+    font-size: 28px;
+    margin-bottom: 0;
+}
+
+.immobilie-container .radio-text {
+    text-align: center;
+    font-weight: 500;
+}
+
+.immobilie-container:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.immobilie-container input:checked~.radio-content .radio-icon {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #222;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus {
+    border-color: var(--accent-color);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(242, 205, 131, 0.2);
+}
+
+.form-input::placeholder {
+    color: #777;
+}
+
+.unit-symbol {
+    position: absolute;
+    right: 12px;
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+/* Mobil için düzenlemeler */
+@media (max-width: 768px) {
+    .immobilie-options {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 10px;
+    }
+
+    .immobilie-container .radio-icon {
+        font-size: 24px;
+    }
+
+    .immobilie-container .radio-text {
+        font-size: 14px;
+    }
+}
+
+/* Form input stillerini güçlendirme */
+.form-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #222;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus {
+    border-color: var(--accent-color);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(242, 205, 131, 0.2);
+}
+
+.form-select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #222;
+    color: #fff;
+    appearance: none;
+}
+
+.form-select:focus {
+    border-color: var(--accent-color);
+    outline: none;
+}
+
+/* Form info text stilini güçlendirme */
+.form-info-text {
+    color: #AAAAAA !important;
+    font-size: 14px;
+    margin-top: 8px;
+    line-height: 1.5;
+    display: block !important;
+}
+
+/* Para birimi simgesi stili */
+.currency-symbol {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--accent-color);
+    font-weight: 500;
+    pointer-events: none;
+}
+
+/* Form giriş alanları için stil düzeltmeleri */
+.form-input,
+.income-input {
+    width: 100%;
+    padding: 12px 40px 12px 12px !important;
+    border: 1px solid #333;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #222;
+    color: #fff !important;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus,
+.income-input:focus {
+    border-color: var(--accent-color);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(242, 205, 131, 0.2);
+}
+
+/* Collapsible bilgi içeriği için stil düzeltmesi */
+.collapsible-content p {
+    color: #FFFFFF !important;
+}
+
+.collapsible-content p strong {
+    color: var(--accent-color) !important;
+}
+
+/* Tooltip içeriği için stil düzeltmesi */
+.income-tooltip,
+.info-tooltip {
+    color: #FFFFFF !important;
+    background-color: rgba(51, 51, 51, 0.9) !important;
+    border: 1px solid var(--accent-color) !important;
+}
+
+/* Başlık ve etiketler için ek düzenlemeler */
+.form-content h1,
+.form-content h2,
+.form-content h3,
+.form-content h4,
+.form-content h5,
+.form-content h6,
+.form-content label,
+.form-content .form-label,
+.form-content .section-title,
+.form-content .nebentaetigkeit-title,
+.form-content .form-title {
+    color: var(--accent-color) !important;
+    background-color: transparent !important;
+    text-shadow: none !important;
+    position: relative;
+    z-index: 2;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    font-weight: 600 !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    letter-spacing: 0.5px !important;
+    margin-bottom: 15px !important;
+}
+
+/* Başlıklar için arka plan rengi düzeltmesi */
+.form-label,
+.form-title,
+.section-title,
+.nebentaetigkeit-title {
+    background: #000000 !important;
+    padding: 5px 0 !important;
+    box-decoration-break: clone !important;
+    -webkit-box-decoration-break: clone !important;
+}
+
+/* Form başlığı için özel stil */
+.form-title {
+    font-size: 32px !important;
+    font-weight: 700 !important;
+    color: var(--accent-color) !important;
+    border-bottom: 2px solid var(--accent-color) !important;
+    padding-bottom: 10px !important;
+    margin-bottom: 25px !important;
+    background: #000000 !important;
+}
+
+/* Section başlığı için özel stil */
+.section-title {
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    color: var(--accent-color) !important;
+    margin-top: 30px !important;
+    margin-bottom: 20px !important;
+    background: #000000 !important;
+}
+
+/* Nettoeinkommen başlığı için özel stil */
+.form-label[for="nettoeinkommen"],
+.nettoeinkommen-label {
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    color: var(--accent-color) !important;
+    border-bottom: 1px solid var(--accent-color) !important;
+    padding-bottom: 5px !important;
+    margin-bottom: 15px !important;
+    background: #000000 !important;
+}
+
+/* Başlık ve etiketlerin üzerine gelen mavi seçim rengini düzeltme */
+::selection {
+    background-color: rgba(242, 205, 131, 0.3) !important;
+    color: #FFFFFF !important;
+}
+
+/* Nettoeinkommen gibi özel alanlar için ek düzeltme */
+.income-input-container {
+    background-color: transparent !important;
+}
+
+.income-input-container * {
+    background-color: transparent !important;
+}
+
+.income-input {
+    background-color: #222 !important;
+    color: #FFFFFF !important;
+    border: 1px solid #333 !important;
+}
+
+/* Para birimi simgeleri için düzeltme */
+.currency-symbol,
+.income-currency {
+    background-color: transparent !important;
+    color: var(--accent-color) !important;
+    right: 15px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+    z-index: 3 !important;
+}
+
+/* Form adım animasyonları */
+.form-step-content {
+    position: relative;
+    width: 100%;
+    min-height: 300px;
+}
+
+.form-step {
+    position: relative;
+    overflow: hidden;
+}
+
+.form-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    gap: 10px;
+}
+
+.form-navigation button {
+    min-width: 120px;
+    transition: all 0.3s ease;
+}
+
+/* Buton animasyonları */
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+}
+
+.btn:focus:not(:active)::after {
+    animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+    }
+
+    20% {
+        transform: scale(25, 25);
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(40, 40);
+    }
+}
+
+/* Progress bar animasyonu */
+.progress-fill {
+    transition: width 0.5s ease-in-out;
+}
+
+/* Notification animasyonu */
+.notification {
+    animation: slideIn 0.3s ease-out forwards;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Form içerik animasyonları */
+.form-content {
+    position: relative;
+}
+
+/* Tooltip animasyonları */
+.tooltip {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.tooltip.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Collapsible animasyonları */
+.collapsible-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+}
+
+.collapsible-content.open {
+    max-height: 500px;
+}
+
+/* Logo animasyonları */
+.partner-logo {
+    transition: transform 0.3s ease;
+}
+
+.partner-logo:hover {
+    transform: scale(1.05);
 }

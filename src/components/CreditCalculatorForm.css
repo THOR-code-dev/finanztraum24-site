@@ -4,14 +4,19 @@
     box-shadow: none;
     width: 100%;
     max-width: 500px;
+    min-width: 350px;
     margin: 0 auto;
     padding: 25px;
     color: #fff;
     position: relative;
     min-height: 550px;
+    max-height: 700px;
+    height: auto;
     display: flex;
     flex-direction: column;
-    /* Formun minimum yüksekliği */
+    overflow-y: auto;
+    /* Sabit boyut için */
+    box-sizing: border-box;
 }
 
 /* Sadece HomePage'deki hesap makinesi için saydam stil */
@@ -20,6 +25,10 @@
     box-shadow: none;
     border: none;
     padding: 15px;
+    height: 100%;
+    width: 100%;
+    min-height: 550px;
+    max-height: 700px;
 }
 
 .progress-bar {
@@ -62,7 +71,8 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    max-height: calc(100vh - 100px);
+    height: 100%;
+    min-height: 500px;
 }
 
 .form-step {
@@ -72,6 +82,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
 /* HomePage'deki form-step için tamamen saydam arka plan */
@@ -79,6 +90,7 @@
     background-color: transparent;
     box-shadow: none;
     padding: 15px;
+    height: 100%;
 }
 
 /* Form-fields içindeki tüm alanlar için saydamlık */
@@ -89,6 +101,14 @@
 /* Form-group içindeki tüm alanlar için saydamlık */
 .homepage .credit-calculator-popup .form-group {
     background-color: transparent;
+}
+
+.form-fields {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 350px;
 }
 
 .form-step h2 {
